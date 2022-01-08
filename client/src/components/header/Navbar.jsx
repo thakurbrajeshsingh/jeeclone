@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, makeStyles, AppBar, Toolbar } from "@material-ui/core";
+import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 
 const useStyle = makeStyles({
   navbar: {
@@ -10,9 +10,20 @@ const useStyle = makeStyles({
   navButton: {
     marginTop: "-1%",
     color: "#FFFFFF",
-    // margin:4
+    borderColor: "white",
+    display:"flex",
+    justifyContent:"center",
+
   },
 });
+
+const defaultProps = {
+  bgcolor: "background.paper",
+  // m: 1,
+  width: "0.1rem",
+  height: "4rem" ,
+  marginTop:-2
+};
 
 const Navbar = () => {
   const classes = useStyle();
@@ -21,8 +32,13 @@ const Navbar = () => {
     <>
       <AppBar className={classes.navbar}>
         <Toolbar>
-          <Button className={classes.navButton}>Home</Button>
-          <Button className={classes.navButton}>Contact Us</Button>
+          <Box className={classes.navButton}>
+            <Button className={classes.navButton} >Home</Button>
+            <Box borderRight={1} {...defaultProps} />
+            <Button className={classes.navButton}>Contact Us</Button>
+            <Box {...defaultProps} borderLeft={0} />
+          </Box>
+          
         </Toolbar>
       </AppBar>
     </>
