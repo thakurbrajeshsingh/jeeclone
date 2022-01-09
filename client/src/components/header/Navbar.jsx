@@ -1,6 +1,11 @@
 import React from "react";
 import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 
+
+
+
+
+
 const useStyle = makeStyles({
   navbar: {
     marginTop: 76,
@@ -38,7 +43,6 @@ const Navbar = () => {
             <Button className={classes.navButton}>Contact Us</Button>
             <Box {...defaultProps} borderLeft={0} />
           </Box>
-          
         </Toolbar>
       </AppBar>
     </>

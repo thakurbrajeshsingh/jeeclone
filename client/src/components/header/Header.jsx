@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import { AppBar, Toolbar, makeStyles, Typography } from "@material-ui/core";
 
-// Components
-import Navbar from "./Navbar";
+
+
 
 const useStyle = makeStyles({
   header: {
@@ -47,7 +47,6 @@ const Header = () => {
           </Typography>
           <img src={logoNIC} alt="logo" className={classes.logoNIC} />
         </Toolbar>
-        <Navbar />
       </AppBar>
       
     </>
