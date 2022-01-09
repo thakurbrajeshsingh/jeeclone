@@ -8,6 +8,7 @@ import Navbar from './components/header/Navbar';
 import MainL from "./components/mainContent/currentNews/MainL";
 import MainR from "./components/rightSection/MainR";
 import MainC from "./components/center/MainC";
+import Main from './components/footer/Main';
 
 
 const useStyle = makeStyles({
@@ -26,10 +27,17 @@ function App() {
       {/* Left Side */}
       <MainL />
       {/* Center side */}
-      
+
       {/* Rigth Side */}
       <MainR />
+      {/* Center  */}
       <MainC />
+
+      {/* Footer */}
+      <Main />
+
+
+
     </div>
 
   );
