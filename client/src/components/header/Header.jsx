@@ -41,7 +41,7 @@ const Header = () => {
           <img src={logoME} alt="logo" className={classes.logoME} />
           <Typography className={classes.headerText}>
             Joint Entrance Examination (Main)
-            <Typography style={{fontSize:20,fontWeight:500}}>
+            <Typography style={{fontSize:20,fontWeight:500,textAlign:"center"}}>
               JEE (Main) 2021
             </Typography>
           </Typography>
