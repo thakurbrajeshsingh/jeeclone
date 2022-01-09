@@ -2,8 +2,7 @@ import React from "react";
 
 // material ui
 import { Box, makeStyles, Typography } from "@material-ui/core";
-import EventAvailableIcon from "@material-ui/icons/EventAvailable";
-import { Component } from "react";
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 
 // Component
 import Accordian from "./Accordian";

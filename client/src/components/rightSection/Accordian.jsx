@@ -7,9 +7,9 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 const useStyle = makeStyles({
   
     leftHeader: {
-    background: "#464545",
+    background: "#FFFFFF",
     marginTop: 1,
-    marginLeft: "75%",
+    marginLeft: "75.8%",
     width: "22.3%",
     display: "flex",
   },
@@ -18,9 +18,10 @@ const useStyle = makeStyles({
     lineHeight: 1.5,
     fontSize: 15,
     fontWeight: 500,
-    color: "#FFFFFF",
-    padding: '5px 5px',
-    boxShadow: '1px 1px 2px 0px pink',
+    color: "black",
+    padding: '10px 10px',
+    boxShadow: '0px 1px 1px 1px black',
+   
   },
 });
 

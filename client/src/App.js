@@ -1,5 +1,5 @@
 import React from "react";
-import {makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 
 // components 
@@ -7,7 +7,7 @@ import Header from "./components/header/Header";
 import Navbar from './components/header/Navbar';
 import MainL from "./components/mainContent/currentNews/MainL";
 import MainR from "./components/rightSection/MainR";
-
+import MainC from "./components/center/MainC";
 
 
 const useStyle = makeStyles({
@@ -25,8 +25,11 @@ function App() {
       <Navbar />
       {/* Left Side */}
       <MainL />
+      {/* Center side */}
+      
       {/* Rigth Side */}
       <MainR />
+      <MainC />
     </div>
 
   );
