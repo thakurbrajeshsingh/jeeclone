@@ -45,6 +45,7 @@ const Header = () => {
     const des5=
     "PUBLIC NOTICE: Relaxation in eligibility criteria under Joint Entrance Examination JEE(Main)-2021 for the academic year 2021 22 in view of COVID-19 Pandemic";
     
+    const imgLink="https://i.ibb.co/WWXJq7S/calendar.png";
 
   const classes = useStyle();
   return (
