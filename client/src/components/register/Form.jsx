@@ -64,7 +64,6 @@ const useStyle = makeStyles({
     marginLeft: 265,
   },
 });
-
 const Body = () => {
   // age
   const [age, setAge] = React.useState("");
@@ -168,9 +167,51 @@ const Body = () => {
               </InputLabel>
             </Box>
             {/* -------------------------- */}
+
+            {/* Indentity Type */}
+            <Box style={{ display: "flex" }}>
+              <Typography
+                className={classes.label}
+                style={{ marginLeft: "15%", marginRight: "34%" }}
+              >
+                Identity Type
+              </Typography>
+              <Typography className={classes.label} style={{ marginLeft: -80 }}>
+                {" "}
+                Identification Name
+              </Typography>
+            </Box>
+
+            {/* ----id input----------- */}
+            <Box style={{ display: "flex" }}>
+              <InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  label="Age"
+                  variant="outlined"
+                  className={classes.selector}
+                  style={{ marginTop: -2 }}
+                >
+                  <MenuItem value={"male"}>Aadhar Number</MenuItem>
+                  <MenuItem value={"female"}>PAN Number</MenuItem>
+                  <MenuItem value={"other"}>Other</MenuItem>
+                </Select>
+              </InputLabel>
+              {/* -------------------- */}
+              {/* identification number */}
+              <TextField
+                type="text"
+                variant="outlined"
+                className={classes.inputField}
+                style={{ marginLeft: 75, width: 250 }}
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
+
       {/* </Box> */}
     </>
   );
