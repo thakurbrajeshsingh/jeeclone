@@ -12,8 +12,6 @@ const useStyle = makeStyles({
     color:"#FFFFFF",
     lineHeight:2.1,
     fontWeight:600
-  
-
   },
 });
 
