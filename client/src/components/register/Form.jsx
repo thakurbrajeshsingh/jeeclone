@@ -4,8 +4,11 @@ import React, { Component, useState } from "react";
 import {
   makeStyles,
   Box,
+  FormControl,
+  InputLabel,
   Typography,
   TextField,
+  MenuItem,
   Select,
 } from "@material-ui/core";
 
@@ -51,14 +54,27 @@ const useStyle = makeStyles({
     width: "21%",
     marginLeft: "15%",
   },
+  selector: {
+    width: 300,
+    marginLeft: 150,
+    marginTop: 15,
+    height: 30,
+  },
+  dobContainer: {
+    marginLeft: 265,
+  },
 });
 
 const Body = () => {
-  const names = ["Male", "Female"];
+  // age
+  const [age, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  // -----------------------
 
   // dob
   const [value, onChange] = useState(new Date());
-
   const classes = useStyle();
   return (
     <>
@@ -115,23 +131,47 @@ const Body = () => {
                 style={{ marginLeft: "1%", width: "100%" }}
               />
             </Box>
+
+            {/* -----------DoB and Gender--------------- */}
+            <Box style={{ display: "flex" }}>
+              <Typography
+                style={{ marginLeft: "15%", marginTop: 10, fontWeight: 600 }}
+              >
+                Candidate's Date of Birth
+              </Typography>
+              <Typography
+                style={{ marginLeft: "17%", marginTop: 10, fontWeight: 600 }}
+              >
+                Candidate's Gender
+              </Typography>
+            </Box>
+            <Box style={{ display: "flex" }}>
+              <DatePicker
+                className={classes.dob}
+                onChange={onChange}
+                value={value}
+              />
+              {/* --------Gender Select---------- */}
+              <InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  label="Age"
+                  variant="outlined"
+                  className={classes.selector}
+                >
+                  <MenuItem value={"male"}>Male</MenuItem>
+                  <MenuItem value={"female"}>Female</MenuItem>
+                  <MenuItem value={"other"}>Other</MenuItem>
+                </Select>
+              </InputLabel>
+            </Box>
+            {/* -------------------------- */}
           </Box>
-          {/* -----------DoB and Gender--------------- */}
-          <Typography
-            style={{ marginLeft: "15%", marginTop: 10, fontWeight: 600 }}
-          >
-            Candidate's Date of Birth
-          </Typography>
-          <DatePicker
-            className={classes.dob}
-            onChange={onChange}
-            value={value}
-          />
-          {/* --------Gender Select---------- */}
-         
-          {/* -------------------------- */}
         </Box>
       </Box>
+      {/* </Box> */}
     </>
   );
 };
