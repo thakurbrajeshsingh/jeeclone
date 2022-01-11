@@ -4,14 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Register from "./components/register/Register";
-
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Register />
+    
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      {/* <App /> */}
+      <Register />
+    </LocalizationProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
