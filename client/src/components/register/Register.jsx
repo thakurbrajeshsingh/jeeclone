@@ -18,6 +18,7 @@ const Main = () => {
       <Header />
       <Navbar />
       <SignupForm />
+      
       <Footer />
     </>
   );

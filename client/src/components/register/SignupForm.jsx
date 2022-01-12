@@ -24,6 +24,7 @@ const useStyle = makeStyles({
   container: {
     background: "#eeeee4",
     marginTop: "9.3%",
+    
   },
   form: {
     margin: "0px 10px 10px 15%",
@@ -81,7 +82,7 @@ const SignupForm = () => {
   const classes = useStyle();
   return (
     <>
-      
+     
       {/* label */}
       <div className={classes.container}>
         <br />
@@ -195,9 +196,10 @@ const SignupForm = () => {
           </Address>
           <Password />
           <CaptchaTest />
+          
         </div>
       </div>
-    
+     
     </>
   );
 };

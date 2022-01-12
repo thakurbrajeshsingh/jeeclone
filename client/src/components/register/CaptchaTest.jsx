@@ -38,8 +38,17 @@ class CaptchaTest extends Component {
     return (
       <>
         {/* subHeading Security Section */}
-        <div >
-          <Typography style={{marginTop:"10px",fontSize:"20px",fontWeight:600,color:"#063970"}}>Choose PIN</Typography>
+        <div>
+          <Typography
+            style={{
+              marginTop: "10px",
+              fontSize: "20px",
+              fontWeight: 600,
+              color: "#063970",
+            }}
+          >
+            Choose PIN
+          </Typography>
         </div>
 
         <div
@@ -55,11 +64,21 @@ class CaptchaTest extends Component {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
             }}
           >
-            <InputLabel style={{fontSize:"18px",fontWeight:600,color:"black"}}>Enter Security PIN(Case Sensitive)</InputLabel>
-            <InputLabel style={{ fontSize: "18px",fontWeight:600,color:"black" }}>
+            <InputLabel
+              style={{ fontSize: "18px", fontWeight: 600, color: "black" }}
+            >
+              Enter Security PIN(Case Sensitive)
+            </InputLabel>
+            <InputLabel
+              style={{
+                fontSize: "18px",
+                fontWeight: 600,
+                color: "black",
+                marginLeft: "170px",
+              }}
+            >
               Enter Security PIN(Case Sensitive)
             </InputLabel>
           </div>
@@ -68,8 +87,8 @@ class CaptchaTest extends Component {
             style={{
               display: "flex",
               width: "70%",
-              margin: "10px 10px 10px 15%",
-              padding: "0.1% 5%",
+              margin: "10px 10px 10px 0px",
+              padding: "0.1% 0%",
               justifyContent: "space-between",
             }}
           >
@@ -78,13 +97,27 @@ class CaptchaTest extends Component {
               id="user_captcha_input"
               name="user_captcha_input"
               type="text"
+              style={{ width: "448px" }}
             />
-            <div style={{ background: "#eeeee4" }}>
-              <LoadCanvasTemplate />
-            </div>
+
+            <LoadCanvasTemplate/>
           </div>
         </div>
-        <button class="btn btn-primary" onClick={() => this.doSubmit()}>
+        <button
+          class="btn btn-primary"
+          onClick={() => this.doSubmit()}
+          style={{
+            borderRadius: "10px",
+            color: "#ffffff",
+            background: "#f98006",
+            marginLeft: "350px",
+            fontSize: "20px",
+            marginTop: "35px",
+            width: "240px",
+            padding: "15px",
+            marginBottom:"50px"
+          }}
+        >
           Submit
         </button>
       </>

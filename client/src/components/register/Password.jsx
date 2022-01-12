@@ -12,10 +12,6 @@ import {
 } from "@material-ui/core";
 
 const useStyle = makeStyles({
-    container: {
-        // textAlign:"center",
-    //   background: "#eeeee4",
-    },
     form: {
       //   margin: "10px 10px 10px 5%",
     //   background: "red",
@@ -77,7 +73,7 @@ const Password = () => {
             <InputLabel className={classes.inputLabel}>Password</InputLabel>
             <InputLabel
               className={classes.inputLabel}
-              style={{ marginLeft: "39%" }}
+              style={{ marginLeft: "360px" }}
             >
               Confirm Password
             </InputLabel>
@@ -94,7 +90,7 @@ const Password = () => {
           </InputLabel>
           <InputLabel
             className={classes.inputLabel}
-            style={{ marginLeft: "30%" }}
+            style={{ marginLeft: "280px" }}
           >
             Security Answer
           </InputLabel>
