@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-
 // date picker
 import DatePicker from "react-date-picker";
-
 
 import {
   Typography,
@@ -58,15 +56,21 @@ const useStyle = makeStyles({
 });
 
 const SignupForm = () => {
-   // age
-   const [age, setAge] = React.useState("");
-   const handleChange = (event) => {
-     setAge(event.target.value);
-   };
+  // age
+  const [age, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  //  identity
+  // age
+  const [identity, setIdentity] = React.useState("");
+  const handleChangeId = (event) => {
+    setIdentity(event.target.value);
+  };
 
   // dob
   const [value, onChange] = useState(new Date());
-  
 
   const classes = useStyle();
   return (
@@ -110,7 +114,9 @@ const SignupForm = () => {
               <InputLabel
                 className={classes.inputLabel}
                 style={{ marginLeft: "37%" }}
-              > Gender
+              >
+                {" "}
+                Gender
               </InputLabel>
             </div>
             {/* Input Fields */}
@@ -119,27 +125,60 @@ const SignupForm = () => {
                 onChange={onChange}
                 value={value}
                 className={classes.inputTwo}
-                style={{width:"50%"}}
+                style={{ width: "50%" }}
               />
-              <InputLabel className={classes.inputTwo}>
+              {/* Gender selector */}
+              <div className={classes.inputTwo}>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={age}
-                  label="Age"
+                  label="Gender"
                   variant="outlined"
-                  
+                  style={{ width: "100%" }}
                 >
                   <MenuItem value={"male"}>Male</MenuItem>
                   <MenuItem value={"female"}>Female</MenuItem>
                   <MenuItem value={"other"}>Other</MenuItem>
                 </Select>
+              </div>
+            </div>
+            {/* -----------identification------------- */}
+
+            {/* Parents Name */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>
+                Identity Type
               </InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "36.5%" }}
+              >
+                Identification Number
+              </InputLabel>
+            </div>
+
+            {/* Identification selector */}
+            <div style={{display:"flex"}}>
+            <div className={classes.inputTwo}>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={identity}
+                label="Gender"
+                variant="outlined"
+                style={{ width: "97%" }}
+              >
+                <MenuItem value={"aadhar"}>Aadhar</MenuItem>
+                <MenuItem value={"pan"}>PAN</MenuItem>
+                <MenuItem value={"other"}>Other</MenuItem>
+              </Select> 
+            </div>
+            <TextField variant="outlined" className={classes.inputTwo} />
             </div>
           </div>
           <CaptchaTest />
         </div>
-       
       </div>
     </>
   );
