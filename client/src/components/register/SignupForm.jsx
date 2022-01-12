@@ -153,7 +153,7 @@ const SignupForm = () => {
             </div>
             {/* -----------identification------------- */}
 
-            {/* Parents Name */}
+            {/* Identity  section */}
             <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>
                 Identity Type
@@ -187,11 +187,7 @@ const SignupForm = () => {
           </div>
           <Address title="Present Address" />
           <Address title="Permanent Address">
-            <Checkbox
-              // checked={checked}
-              // onChange={handleChange}
-              inputProps={{ "aria-label": "controlled" }}
-            />
+            <Checkbox/>
           </Address>
           <Password/>
           <CaptchaTest />

@@ -37,49 +37,50 @@ class CaptchaTest extends Component {
   render() {
     return (
       <>
-      {/* subHeading Security Section */}
-      
-        <div>
+        {/* subHeading Security Section */}
+        <div >
+          <Typography style={{marginTop:"10px",fontSize:"20px",fontWeight:600,color:"#063970"}}>Choose PIN</Typography>
+        </div>
+
+        <div
+          style={{
+            padding: "0.1% 5%",
+            margin: "10px 10px 10px 0%",
+            width: "96.3%",
+            border: "2px solid #1e81b0",
+            borderStyle: "dashed",
+            padding: "15px",
+          }}
+        >
           <div
             style={{
-              padding: "0.1% 5%",
-              margin: "10px 10px 10px 0%",
-              width: "96.3%",
-              border: "2px solid #1e81b0",
-              borderStyle: "dashed",
-              padding: "15px",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <InputLabel>Enter Security PIN(Case Sensitive)</InputLabel>
-              <InputLabel style={{ fontSize: 18 }}>
-                Enter Security PIN(Case Sensitive)
-              </InputLabel>
-            </div>
-            {/* --------------------------------------------------------------------- */}
-            <div
-              style={{
-                display: "flex",
-                width: "70%",
-                margin: "10px 10px 10px 15%",
-                padding: "0.1% 5%",
-                justifyContent: "space-between",
-              }}
-            >
-              <input
-                placeholder="Enter Captcha Value"
-                id="user_captcha_input"
-                name="user_captcha_input"
-                type="text"
-              />
-              <div style={{ background: "#eeeee4" }}>
-                <LoadCanvasTemplate />
-              </div>
+            <InputLabel style={{fontSize:"18px",fontWeight:600,color:"black"}}>Enter Security PIN(Case Sensitive)</InputLabel>
+            <InputLabel style={{ fontSize: "18px",fontWeight:600,color:"black" }}>
+              Enter Security PIN(Case Sensitive)
+            </InputLabel>
+          </div>
+          {/* --------------------------------------------------------------------- */}
+          <div
+            style={{
+              display: "flex",
+              width: "70%",
+              margin: "10px 10px 10px 15%",
+              padding: "0.1% 5%",
+              justifyContent: "space-between",
+            }}
+          >
+            <input
+              placeholder="Enter Captcha Value"
+              id="user_captcha_input"
+              name="user_captcha_input"
+              type="text"
+            />
+            <div style={{ background: "#eeeee4" }}>
+              <LoadCanvasTemplate />
             </div>
           </div>
         </div>
