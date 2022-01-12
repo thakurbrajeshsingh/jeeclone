@@ -39,13 +39,6 @@ class CaptchaTest extends Component {
       <>
       {/* subHeading Security Section */}
       
-
-
-
-
-
-
-
         <div>
           <div
             style={{

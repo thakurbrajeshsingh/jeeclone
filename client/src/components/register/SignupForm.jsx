@@ -15,6 +15,8 @@ import {
 } from "@material-ui/core";
 import CaptchaTest from "./CaptchaTest";
 import Address from "./Address";
+import Password from "./Password";
+
 const useStyle = makeStyles({
   container: {
     background: "#eeeee4",
@@ -88,7 +90,11 @@ const SignupForm = () => {
           <div className={classes.outerBorder}>
             <div className={classes.inputDiv}>
               <InputLabel className={classes.inputLabel}>Name</InputLabel>
-              <TextField variant="outlined" className={classes.input} />
+              <TextField
+                variant="outlined"
+                className={classes.input}
+                focused
+              />
             </div>
             {/* Parents Name */}
             <div className={classes.labelContainer}>
@@ -187,7 +193,7 @@ const SignupForm = () => {
               inputProps={{ "aria-label": "controlled" }}
             />
           </Address>
-
+          <Password/>
           <CaptchaTest />
         </div>
       </div>
