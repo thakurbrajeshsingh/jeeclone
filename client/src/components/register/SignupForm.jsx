@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+// component
+import HeaderButton from "./HeaderButton";
+
 // date picker
 import DatePicker from "react-date-picker";
 
@@ -23,7 +26,7 @@ const useStyle = makeStyles({
     marginTop: "9.3%",
   },
   form: {
-    margin: "10px 10px 10px 15%",
+    margin: "0px 10px 10px 15%",
     background: "#ffffff",
     width: "70%",
     padding: "0.1% 5%",
@@ -78,10 +81,15 @@ const SignupForm = () => {
   const classes = useStyle();
   return (
     <>
+      
       {/* label */}
       <div className={classes.container}>
+        <br />
+        <br />
+        <HeaderButton />
         <div className={classes.form}>
-          <div style={{ marginTop: 30 }}>
+        {/* <HeaderButton /> */}
+          <div style={{ marginTop: "30px" }}>
             <Typography className={classes.formSubheading}>
               Personal Details
             </Typography>
@@ -90,11 +98,7 @@ const SignupForm = () => {
           <div className={classes.outerBorder}>
             <div className={classes.inputDiv}>
               <InputLabel className={classes.inputLabel}>Name</InputLabel>
-              <TextField
-                variant="outlined"
-                className={classes.input}
-                focused
-              />
+              <TextField variant="outlined" className={classes.input} focused />
             </div>
             {/* Parents Name */}
             <div className={classes.labelContainer}>
@@ -187,12 +191,13 @@ const SignupForm = () => {
           </div>
           <Address title="Present Address" />
           <Address title="Permanent Address">
-            <Checkbox/>
+            <Checkbox />
           </Address>
-          <Password/>
+          <Password />
           <CaptchaTest />
         </div>
       </div>
+    
     </>
   );
 };
