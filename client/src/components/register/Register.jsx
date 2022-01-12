@@ -6,20 +6,20 @@ import { makeStyles, Box } from "@material-ui/core";
 import Footer from "../footer/Main";
 import Header from "../header/Header";
 import Navbar from "../header/Navbar";
-// import Form from "../register/Form";
 import SignupForm from "./SignupForm";
-const useStyle = makeStyles({
-});
+
+
+const useStyle = makeStyles({});
 
 const Main = () => {
   const classes = useStyle();
   return (
     <>
-        <Header />
-        <Navbar />
-        <SignupForm />
-        <Footer />
-    
+      <Header />
+      <Navbar />
+      <SignupForm />
+      
+      <Footer />
     </>
   );
 };

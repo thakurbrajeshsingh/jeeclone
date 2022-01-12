@@ -4,6 +4,7 @@ import React, { useState } from "react";
 // date picker
 import DatePicker from "react-date-picker";
 
+
 import {
   Typography,
   makeStyles,
@@ -13,7 +14,7 @@ import {
   InputLabel,
   TextField,
 } from "@material-ui/core";
-import DateAdapter from "@mui/lab/AdapterDateFns";
+import CaptchaTest from "./CaptchaTest";
 
 const useStyle = makeStyles({
   container: {
@@ -101,6 +102,7 @@ const SignupForm = () => {
             </div>
 
             {/* -----------DoB and Gender--------------- */}
+            {/* Label */}
             <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>
                 Date of Birth
@@ -108,13 +110,12 @@ const SignupForm = () => {
               <InputLabel
                 className={classes.inputLabel}
                 style={{ marginLeft: "37%" }}
-              >
-                Gender
+              > Gender
               </InputLabel>
             </div>
+            {/* Input Fields */}
             <div style={{ display: "flex" }}>
               <DatePicker
-                // className={classes.dob}
                 onChange={onChange}
                 value={value}
                 className={classes.inputTwo}
@@ -136,7 +137,9 @@ const SignupForm = () => {
               </InputLabel>
             </div>
           </div>
+          <CaptchaTest />
         </div>
+       
       </div>
     </>
   );
