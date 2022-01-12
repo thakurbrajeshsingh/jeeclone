@@ -5,6 +5,7 @@ import DatePicker from "react-date-picker";
 
 import {
   Typography,
+  Checkbox,
   makeStyles,
   Select,
   MenuItem,
@@ -13,7 +14,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import CaptchaTest from "./CaptchaTest";
-
+import Address from "./Address";
 const useStyle = makeStyles({
   container: {
     background: "#eeeee4",
@@ -75,6 +76,7 @@ const SignupForm = () => {
   const classes = useStyle();
   return (
     <>
+      {/* label */}
       <div className={classes.container}>
         <div className={classes.form}>
           <div style={{ marginTop: 30 }}>
@@ -159,24 +161,33 @@ const SignupForm = () => {
             </div>
 
             {/* Identification selector */}
-            <div style={{display:"flex"}}>
-            <div className={classes.inputTwo}>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={identity}
-                label="Gender"
-                variant="outlined"
-                style={{ width: "97%" }}
-              >
-                <MenuItem value={"aadhar"}>Aadhar</MenuItem>
-                <MenuItem value={"pan"}>PAN</MenuItem>
-                <MenuItem value={"other"}>Other</MenuItem>
-              </Select> 
-            </div>
-            <TextField variant="outlined" className={classes.inputTwo} />
+            <div style={{ display: "flex" }}>
+              <div className={classes.inputTwo}>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={identity}
+                  label="Gender"
+                  variant="outlined"
+                  style={{ width: "97%" }}
+                >
+                  <MenuItem value={"aadhar"}>Aadhar</MenuItem>
+                  <MenuItem value={"pan"}>PAN</MenuItem>
+                  <MenuItem value={"other"}>Other</MenuItem>
+                </Select>
+              </div>
+              <TextField variant="outlined" className={classes.inputTwo} />
             </div>
           </div>
+          <Address title="Present Address" />
+          <Address title="Permanent Address">
+            <Checkbox
+              // checked={checked}
+              // onChange={handleChange}
+              inputProps={{ "aria-label": "controlled" }}
+            />
+          </Address>
+
           <CaptchaTest />
         </div>
       </div>

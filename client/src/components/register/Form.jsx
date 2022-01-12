@@ -202,7 +202,6 @@ const Body = () => {
               {/* -------------------- */}
               {/* identification number */}
               <TextField
-                type="text"
                 variant="outlined"
                 className={classes.inputField}
                 style={{ marginLeft: 75, width: 250 }}
