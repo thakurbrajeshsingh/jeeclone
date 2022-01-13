@@ -80,8 +80,8 @@ const Password = () => {
           </div>
         </div>
         <div style={{ display: "flex" }}>
-          <TextField variant="outlined" className={classes.inputTwo} />
-          <TextField variant="outlined" className={classes.inputTwo} />
+          <TextField type={"password"} variant="outlined" className={classes.inputTwo} />
+          <TextField type={"password"} variant="outlined" className={classes.inputTwo} />
         </div>
         {/* ----------------------- */}
         <div className={classes.labelContainer}>

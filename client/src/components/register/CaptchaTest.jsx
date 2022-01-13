@@ -25,7 +25,7 @@ class CaptchaTest extends Component {
     let user_captcha = document.getElementById("user_captcha_input").value;
 
     if (validateCaptcha(user_captcha) == true) {
-      alert("Captcha Matched");
+      // alert("Captcha Matched");
       loadCaptchaEnginge(6);
       document.getElementById("user_captcha_input").value = "";
     } else {
@@ -71,25 +71,15 @@ class CaptchaTest extends Component {
             >
               Enter Security PIN(Case Sensitive)
             </InputLabel>
-            <InputLabel
-              style={{
-                fontSize: "18px",
-                fontWeight: 600,
-                color: "black",
-                marginLeft: "170px",
-              }}
-            >
-              Enter Security PIN(Case Sensitive)
-            </InputLabel>
           </div>
           {/* --------------------------------------------------------------------- */}
           <div
             style={{
               display: "flex",
-              width: "70%",
+              width: "800px",
               margin: "10px 10px 10px 0px",
-              padding: "0.1% 0%",
-              justifyContent: "space-between",
+              padding: "10px",
+              
             }}
           >
             <input
@@ -97,29 +87,19 @@ class CaptchaTest extends Component {
               id="user_captcha_input"
               name="user_captcha_input"
               type="text"
-              style={{ width: "448px" }}
+              style={{ width: "450px"}}
             />
-
+            <div style={{margin:"0px 5px 0px 15px"}}>
             <LoadCanvasTemplate/>
+            </div>
+            <button onClick={() => this.doSubmit()}
+          style={{width:"200px",}}
+        >
+          Verify Captcha
+        </button>
           </div>
         </div>
-        <button
-          class="btn btn-primary"
-          onClick={() => this.doSubmit()}
-          style={{
-            borderRadius: "10px",
-            color: "#ffffff",
-            background: "#f98006",
-            marginLeft: "350px",
-            fontSize: "20px",
-            marginTop: "35px",
-            width: "240px",
-            padding: "15px",
-            marginBottom:"50px"
-          }}
-        >
-          Submit
-        </button>
+        
       </>
     );
   }

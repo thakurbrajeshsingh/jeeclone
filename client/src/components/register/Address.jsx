@@ -146,6 +146,23 @@ const Address = (props) => {
               <TextField variant="outlined" className={classes.inputTwo} />
             </div>
 
+{/* -------------contact details--------------------- */}
+<div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>Email Address</InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "320px" }}
+              >
+                Phone Number
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField placeholder="xyz@stlindia.com" type="email" variant="outlined" className={classes.inputTwo} />
+              <TextField  placeholder="+91 12345667892" type="number" variant="outlined" className={classes.inputTwo} />
+            </div>
+
+
+
         {/* dashed border  end */}
       </div>
       </div>
