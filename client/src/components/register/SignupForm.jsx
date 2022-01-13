@@ -67,9 +67,6 @@ const SignupForm = () => {
   const [identity, setIdentity] = useState("");
   const [value, onChange] = useState(new Date());
 
-  // --------------------Identity hook------------------
-
-  // --------------------DoB--------------------------
 
   // ---------------------- form validation---------------
   const initialValues = { name: "", father: "", mother: "" };
@@ -88,28 +85,31 @@ const SignupForm = () => {
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit);
-    {
-      console.log(formValues);
-    }
   }, [formErrors]);
 
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    const nameRegex =/^[A-Za-z ]+$/;
-    
+    const nameRegex = /^[A-Za-z ]+$/;
+
     if (!values.name) {
       errors.name = "Name is Required";
-    }
-    else if(!nameRegex.test(values.name)){
+    } else if (!nameRegex.test(values.name)) {
       errors.name = "Please Enter Alphabets";
+    } else if (!values.name.length < 3) {
+      errors.name = "Name must be more than 3 characters";
     }
-
+    // ----------------------------------------------------
     if (!values.father) {
       errors.father = "Father Name is Required";
+    } else if (!nameRegex.test(values.father)) {
+      errors.father = "Please Enter Alphabets";
     }
+
     if (!values.mother) {
       errors.mother = "Mother Name is Required";
+    } else if (!nameRegex.test(values.mother)) {
+      errors.mother = "Please Enter Alphabets";
     }
     return errors;
   };
@@ -120,7 +120,6 @@ const SignupForm = () => {
   return (
     <>
       <div className={classes.container}>
-        <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
         <form onSubmit={handleSubmit}>
           {/* label */}
           <br />
@@ -143,12 +142,10 @@ const SignupForm = () => {
                   className={classes.input}
                   value={formValues.name}
                   onChange={handleChange}
-                  minlength={3}
-                  maxLength={10}
                   focused
                 />
               </div>
-              <p style={{color:"red"}}>{formErrors.name}</p>
+              <p style={{ color: "red" }}>{formErrors.name}</p>
               {/* Parents Name */}
               <div className={classes.labelContainer}>
                 <InputLabel className={classes.inputLabel}>
@@ -169,7 +166,7 @@ const SignupForm = () => {
                   value={formValues.father}
                   onChange={handleChange}
                 />
-                <p style={{color:"red"}}>{formErrors.father}</p>
+               
                 <TextField
                   name="mother"
                   variant="outlined"
@@ -177,9 +174,12 @@ const SignupForm = () => {
                   value={formValues.mother}
                   onChange={handleChange}
                 />
-                <p style={{color:"red"}}>{formErrors.mother}</p>
+                
               </div>
-             
+              <div style={{display:"flex"}}>
+              <p style={{ color: "red",marginRight:"280px" }}>{formErrors.father}</p>
+              <p style={{ color: "red" }}>{formErrors.mother}</p>
+              </div>
               {/* -----------DoB and Gender--------------- */}
               {/* Label */}
               <div className={classes.labelContainer}>
@@ -253,12 +253,11 @@ const SignupForm = () => {
             </div>
             <Address title="Present Address" />
             <Address title="Permanent Address">
-              <Checkbox />
+              {/* <Checkbox /> */}
             </Address>
             <Password />
             <CaptchaTest />
             <button
-          
               style={{
                 background: "#ff8000",
                 marginLeft: "350px",
@@ -269,7 +268,9 @@ const SignupForm = () => {
                 width: "200px",
                 height: "50px",
               }}
-            >Submit</button>
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
