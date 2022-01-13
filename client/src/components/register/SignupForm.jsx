@@ -251,10 +251,9 @@ const SignupForm = () => {
                 <TextField variant="outlined" className={classes.inputTwo} />
               </div>
             </div>
-            <Address title="Present Address" />
-            <Address title="Permanent Address">
+            <Address  />
+            
               {/* <Checkbox /> */}
-            </Address>
             <Password />
             <CaptchaTest />
             <button

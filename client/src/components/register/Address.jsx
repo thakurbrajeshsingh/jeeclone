@@ -6,16 +6,13 @@ import {
   Typography,
   makeStyles,
   MenuItem,
+  Checkbox,
   Box,
   InputLabel,
   TextField,
 } from "@material-ui/core";
 
 const useStyle = makeStyles({
-  container: {
-    // background: "#eeeee4",
-    // marginTop: "9.3%",
-  },
   form: {
     margin: "10px 10px 10px 0px",
     background: "#ffffff",
@@ -62,7 +59,7 @@ const useStyle = makeStyles({
   },
 });
 
-const Address = (props) => {
+const Address = () => {
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
 
@@ -74,11 +71,11 @@ const Address = (props) => {
   return (
     <>
       {/*  address label */}
-      <div className={classes.container}>
+      <div >
         <div className={classes.form}>
           <div style={{ marginTop: 30 }}>
             <Typography className={classes.formSubheading}>
-              {props.title}
+              Present Address
             </Typography>
           </div>
           <div className={classes.outerBorder}>
@@ -100,7 +97,9 @@ const Address = (props) => {
             {/* ----city /country------ */}
             {/* Address */}
             <div className={classes.labelContainer}>
-              <InputLabel className={classes.inputLabel}>City/Locality/Area</InputLabel>
+              <InputLabel className={classes.inputLabel}>
+                City/Locality/Area
+              </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
                 style={{ marginLeft: "32%" }}
@@ -117,22 +116,22 @@ const Address = (props) => {
                 className={classes.inputTwo}
               />
             </div>
-        {/* -----------------State And District---------------------- */}
-        <div className={classes.labelContainer}>
+            {/* -----------------State And District---------------------- */}
+            <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>State</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{marginLeft: "45.2%" }}
+                style={{ marginLeft: "45.2%" }}
               >
-               District
+                District
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
               <TextField variant="outlined" className={classes.inputTwo} />
               <TextField variant="outlined" className={classes.inputTwo} />
             </div>
-         {/* -----------------pin & mobile---------------------- */}
-         <div className={classes.labelContainer}>
+            {/* -----------------pin & mobile---------------------- */}
+            <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>Pin Code</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
@@ -146,9 +145,11 @@ const Address = (props) => {
               <TextField variant="outlined" className={classes.inputTwo} />
             </div>
 
-{/* -------------contact details--------------------- */}
-<div className={classes.labelContainer}>
-              <InputLabel className={classes.inputLabel}>Email Address</InputLabel>
+            {/* -------------contact details--------------------- */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>
+                Email Address
+              </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
                 style={{ marginLeft: "320px" }}
@@ -157,15 +158,135 @@ const Address = (props) => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField placeholder="xyz@stlindia.com" type="email" variant="outlined" className={classes.inputTwo} />
-              <TextField  placeholder="+91 12345667892" type="number" variant="outlined" className={classes.inputTwo} />
+              <TextField
+                placeholder="xyz@stlindia.com"
+                type="email"
+                variant="outlined"
+                className={classes.inputTwo}
+              />
+              <TextField
+                placeholder="+91 12345667892"
+                type="number"
+                variant="outlined"
+                className={classes.inputTwo}
+              />
+            </div>
+            {/* dashed border  end */}
+          </div>
+        </div>
+      </div>
+      {/* ----------------------------permanent address----------------------------------------- */}
+      <div className={classes.container}>
+        <div className={classes.form}>
+          <div style={{ marginTop: 30 }}>
+            <Typography className={classes.formSubheading}>
+              Permanent Address
+            </Typography>
+          </div>
+          <div className={classes.outerBorder}>
+            {/* //border blue */}
+            {/* Address */}
+            <div style={{ display: "flex" }}>
+              <Checkbox  inputProps={{ 'aria-label': 'controlled' }} />
+              <InputLabel
+                style={{ fontSize: 16, fontWeight: 600, marginTop: "15px",color:"black" }}
+              >
+                Same As Present Address
+              </InputLabel>
+            </div>
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>Address</InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "42%" }}
+              >
+                Locality(Optional)
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField variant="outlined" className={classes.inputTwo} />
+              <TextField variant="outlined" className={classes.inputTwo} />
+            </div>
+            {/* ----city /country------ */}
+            {/* Address */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>
+                City/Locality/Area
+              </InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "32%" }}
+              >
+                Country
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField variant="outlined" className={classes.inputTwo} />
+              <Select
+                options={options}
+                value={value}
+                onChange={changeHandler}
+                className={classes.inputTwo}
+              />
+            </div>
+            {/* -----------------State And District---------------------- */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>State</InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "45.2%" }}
+              >
+                District
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField variant="outlined" className={classes.inputTwo} />
+              <TextField variant="outlined" className={classes.inputTwo} />
+            </div>
+            {/* -----------------pin & mobile---------------------- */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>Pin Code</InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "41.2%" }}
+              >
+                Mobile Number
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField type="number" variant="outlined" className={classes.inputTwo} />
+              <TextField type="number" variant="outlined" className={classes.inputTwo} />
             </div>
 
-
-
-        {/* dashed border  end */}
-      </div>
-      </div>
+            {/* -------------contact details--------------------- */}
+            <div className={classes.labelContainer}>
+              <InputLabel className={classes.inputLabel}>
+                Email Address
+              </InputLabel>
+              <InputLabel
+                className={classes.inputLabel}
+                style={{ marginLeft: "320px" }}
+              >
+                Phone Number
+              </InputLabel>
+            </div>
+            <div style={{ display: "flex" }}>
+              <TextField
+                placeholder="xyz@stlindia.com"
+                type="email"
+                variant="outlined"
+                className={classes.inputTwo}
+              />
+              <TextField
+                placeholder="+91 12345667892"
+                type="number"
+                variant="outlined"
+                className={classes.inputTwo}
+              />
+            </div>
+            {/* dashed border  end */}
+          </div>
+        </div>
       </div>
     </>
   );
