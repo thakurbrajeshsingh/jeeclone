@@ -26,9 +26,10 @@ const useStyle = makeStyles({
     padding: "20px",
   },
   inputLabel: {
-    fontSize: 20,
+    fontSize: 18,
     color: "black",
-    fontWeight: 550,
+    fontWeight: 500,
+    marginTop: 20,
   },
   input: {
     marginTop: 10,
@@ -41,6 +42,7 @@ const useStyle = makeStyles({
   inputTwo: {
     width: "50%",
     padding: 5,
+    height: "20px",
   },
 });
 const Password = () => {
@@ -53,14 +55,12 @@ const Password = () => {
     const confPass = e.target.value;
     setConfirmPassword(confPass);
     setTimeout(() => {
-      if (confPass  != password) {
-        setIsError("Password Does Not Match")
-        }
-        else{
-          setIsError("");
-        }
+      if (confPass != password) {
+        setIsError("Password Does Not Match");
+      } else {
+        setIsError("");
+      }
     }, 1000);
-    
   };
 
   // ---------------------------------------------------------
@@ -70,8 +70,7 @@ const Password = () => {
     <>
       <div style={{ marginLeft: "-5%" }}>
         <div className={classes.container}>
-          <form >
-            
+          <form>
             <div className={classes.form}>
               <div style={{ marginTop: 10 }}>
                 <Typography className={classes.formSubheading}>
@@ -111,12 +110,12 @@ const Password = () => {
                     className={classes.inputTwo}
                   />
                 </div>
-                <div style={{margin:"10px",color:"red",fontWeight:600}}>
-              {isError}
-            </div>
+                <div style={{ margin: "10px", color: "red", fontWeight: 600 }}>
+                  {isError}
+                </div>
                 {/* ----------------------- */}
                 <div className={classes.labelContainer}>
-                  <InputLabel className={classes.inputLabel}>
+                  <InputLabel className={classes.inputLabel} style={{marginTop:""}}>
                     Security Question
                   </InputLabel>
                   <InputLabel
@@ -133,17 +132,16 @@ const Password = () => {
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      // value={security}
                       label="Gender"
                       variant="outlined"
-                      style={{ width: "440px" }}
+                      style={{ width: "440px" ,height:"35px"}}
                     >
                       <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                       <MenuItem value={"pan"}>PAN</MenuItem>
                       <MenuItem value={"other"}>Other</MenuItem>
                     </Select>
                   </div>
-                  <TextField variant="outlined" className={classes.inputTwo} />
+                  <input variant="outlined" className={classes.inputTwo} />
                 </div>
               </div>
             </div>

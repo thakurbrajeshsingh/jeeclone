@@ -9,7 +9,7 @@ import {
   Checkbox,
   Box,
   InputLabel,
-  TextField,
+  input,
 } from "@material-ui/core";
 
 const useStyle = makeStyles({
@@ -30,9 +30,9 @@ const useStyle = makeStyles({
     padding: "20px",
   },
   inputLabel: {
-    fontSize: 20,
+    fontSize: 18,
     color: "black",
-    fontWeight: 550,
+    fontWeight: 500,
     marginTop: 20,
   },
   input: {
@@ -51,6 +51,7 @@ const useStyle = makeStyles({
   inputTwo: {
     width: "50%",
     padding: 5,
+    height:"20px"
   },
   formInner: {
     display: "flex",
@@ -91,8 +92,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}} />
+              <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* ----city /country------ */}
             {/* Address */}
@@ -108,12 +109,13 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}}  />
               <Select
                 options={options}
                 value={value}
                 onChange={changeHandler}
                 className={classes.inputTwo}
+                 
               />
             </div>
             {/* -----------------State And District---------------------- */}
@@ -127,8 +129,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}} />
+              <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* -----------------pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
@@ -141,8 +143,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}}  />
+              <input variant="outlined" className={classes.inputTwo} />
             </div>
 
             {/* -------------contact details--------------------- */}
@@ -158,13 +160,14 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField
+              <input
                 placeholder="xyz@stlindia.com"
                 type="email"
                 variant="outlined"
                 className={classes.inputTwo}
+                style={{marginRight:"2%"}} 
               />
-              <TextField
+              <input
                 placeholder="+91 12345667892"
                 type="number"
                 variant="outlined"
@@ -204,8 +207,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* ----city /country------ */}
             {/* Address */}
@@ -221,12 +224,13 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo}/>
               <Select
                 options={options}
                 value={value}
                 onChange={changeHandler}
                 className={classes.inputTwo}
+                margin={{marginLeft:"-1%"}}
               />
             </div>
             {/* -----------------State And District---------------------- */}
@@ -240,8 +244,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField variant="outlined" className={classes.inputTwo} />
-              <TextField variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} />
+              <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* -----------------pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
@@ -254,8 +258,8 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField type="number" variant="outlined" className={classes.inputTwo} />
-              <TextField type="number" variant="outlined" className={classes.inputTwo} />
+              <input type="number" variant="outlined" className={classes.inputTwo} />
+              <input type="number" variant="outlined" className={classes.inputTwo} />
             </div>
 
             {/* -------------contact details--------------------- */}
@@ -271,13 +275,13 @@ const Address = () => {
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <TextField
+              <input
                 placeholder="xyz@stlindia.com"
                 type="email"
                 variant="outlined"
                 className={classes.inputTwo}
               />
-              <TextField
+              <input
                 placeholder="+91 12345667892"
                 type="number"
                 variant="outlined"

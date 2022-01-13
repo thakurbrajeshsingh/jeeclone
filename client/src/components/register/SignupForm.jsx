@@ -42,15 +42,15 @@ const useStyle = makeStyles({
     padding: "20px",
   },
   inputLabel: {
-    fontSize: 20,
+    fontSize: 18,
     color: "black",
-    fontWeight: 550,
+    fontWeight: 500,
     marginTop: 20,
   },
   input: {
-    height: "40px",
+    height: "30px",
     marginTop: 10,
-    width: "882px",
+    width: "98%",
   },
   labelContainer: {
     display: "flex",
@@ -58,6 +58,8 @@ const useStyle = makeStyles({
   inputTwo: {
     width: "50%",
     padding: 5,
+    marginRight:"2%",
+    height:"30px"
   },
 });
 
@@ -73,6 +75,8 @@ const SignupForm = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+
+  // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -147,19 +151,19 @@ const SignupForm = () => {
               </div>
               <p style={{ color: "red" }}>{formErrors.name}</p>
               {/* Parents Name */}
-              <div className={classes.labelContainer}>
-                <InputLabel className={classes.inputLabel}>
+              <div className={classes.labelContainer} style={{marginTop:"5px"}}>
+                <InputLabel className={classes.inputLabel} >
                   Father's Name
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "35%" }}
+                  style={{ marginLeft: "37%" }}
                 >
                   Mother's Name
                 </InputLabel>
               </div>
               <div style={{ display: "flex" }}>
-                <TextField
+                <input
                   name="father"
                   variant="outlined"
                   className={classes.inputTwo}
@@ -167,7 +171,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                 />
                
-                <TextField
+                <input
                   name="mother"
                   variant="outlined"
                   className={classes.inputTwo}
@@ -177,18 +181,18 @@ const SignupForm = () => {
                 
               </div>
               <div style={{display:"flex"}}>
-              <p style={{ color: "red",marginRight:"280px" }}>{formErrors.father}</p>
-              <p style={{ color: "red" }}>{formErrors.mother}</p>
+              <p style={{ color: "red",marginRight:"280px",marginTop:"10px"}}>{formErrors.father}</p>
+              <p style={{ color: "red",marginTop:"10px" }}>{formErrors.mother}</p>
               </div>
               {/* -----------DoB and Gender--------------- */}
               {/* Label */}
               <div className={classes.labelContainer}>
-                <InputLabel className={classes.inputLabel}>
+                <InputLabel className={classes.inputLabel} style={{marginLeft:"1%"}}>
                   Date of Birth
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "37%" }}
+                  style={{ marginLeft: "38%" }}
                 >
                   Gender
                 </InputLabel>
@@ -199,8 +203,8 @@ const SignupForm = () => {
                   onChange={onChange}
                   value={value}
                   className={classes.inputTwo}
-                  style={{ width: "50%" }}
                 />
+
                 {/* Gender selector */}
                 <div className={classes.inputTwo}>
                   <Select
@@ -209,7 +213,7 @@ const SignupForm = () => {
                     value={age}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "100%" }}
+                    style={{ width: "100%",height:"40px" }}
                   >
                     <MenuItem value={"male"}>Male</MenuItem>
                     <MenuItem value={"female"}>Female</MenuItem>
@@ -221,12 +225,13 @@ const SignupForm = () => {
 
               {/* Identity  section */}
               <div className={classes.labelContainer}>
-                <InputLabel className={classes.inputLabel}>
+                <InputLabel className={classes.inputLabel}
+                style={{ marginLeft: "1%" }}>
                   Identity Type
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "36.5%" }}
+                  style={{ marginLeft: "38%" }}
                 >
                   Identification Number
                 </InputLabel>
@@ -241,14 +246,14 @@ const SignupForm = () => {
                     value={identity}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "97%" }}
+                    style={{ width: "100%",height:"40px" }}
                   >
                     <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                     <MenuItem value={"pan"}>PAN</MenuItem>
                     <MenuItem value={"other"}>Other</MenuItem>
                   </Select>
                 </div>
-                <TextField variant="outlined" className={classes.inputTwo} />
+                <input variant="outlined" className={classes.inputTwo} />
               </div>
             </div>
             <Address  />
