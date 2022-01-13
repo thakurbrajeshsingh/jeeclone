@@ -26,8 +26,9 @@ const useStyle = makeStyles({
   },
   outerBorder: {
     border: "2px solid #1e81b0",
+    borderRadius: "25px",
     borderStyle: "dashed",
-    padding: "20px",
+    padding: "40px",
   },
   inputLabel: {
     fontSize: 18,
@@ -51,7 +52,12 @@ const useStyle = makeStyles({
   inputTwo: {
     width: "50%",
     padding: 5,
-    height:"20px"
+    height: "20px",
+  },
+  inputSelect: {
+    width: "50%",
+    padding: 5,
+    height: "20px",
   },
   formInner: {
     display: "flex",
@@ -72,7 +78,7 @@ const Address = () => {
   return (
     <>
       {/*  address label */}
-      <div >
+      <div>
         <div className={classes.form}>
           <div style={{ marginTop: 30 }}>
             <Typography className={classes.formSubheading}>
@@ -86,16 +92,20 @@ const Address = () => {
               <InputLabel className={classes.inputLabel}>Address</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "42%" }}
+                style={{ marginLeft: "43.5%" }}
               >
                 Locality(Optional)
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}} />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
               <input variant="outlined" className={classes.inputTwo} />
             </div>
-            {/* ----city /country------ */}
+            {/* ---- present city /country------ */}
             {/* Address */}
             <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>
@@ -103,59 +113,71 @@ const Address = () => {
               </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "32%" }}
+                style={{ marginLeft: "34%" }}
               >
                 Country
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}}  />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ width: "47%", marginRight: "2%" }}
+              />
               <Select
                 options={options}
                 value={value}
                 onChange={changeHandler}
-                className={classes.inputTwo}
-                 
+                className={classes.inputSelect}
+                // styles={{width: "400px"}}
               />
             </div>
-            {/* -----------------State And District---------------------- */}
+            {/* ----------------- present State And District---------------------- */}
             <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>State</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "45.2%" }}
+                style={{ marginLeft: "46.5%" }}
               >
                 District
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}} />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
               <input variant="outlined" className={classes.inputTwo} />
             </div>
-            {/* -----------------pin & mobile---------------------- */}
+            {/* ----------------- present pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
               <InputLabel className={classes.inputLabel}>Pin Code</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "41.2%" }}
+                style={{ marginLeft: "42%" }}
               >
                 Mobile Number
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} style={{marginRight:"2%"}}  />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
               <input variant="outlined" className={classes.inputTwo} />
             </div>
 
-            {/* -------------contact details--------------------- */}
+            {/* ------------- present contact details--------------------- */}
             <div className={classes.labelContainer}>
-              <InputLabel className={classes.inputLabel}>
-                Email Address
-              </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "320px" }}
+                style={{ marginRight: "38%" }}
               >
+                Email Address
+              </InputLabel>
+              <InputLabel className={classes.inputLabel}>
                 Phone Number
               </InputLabel>
             </div>
@@ -165,7 +187,7 @@ const Address = () => {
                 type="email"
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{marginRight:"2%"}} 
+                style={{ marginRight: "2%" }}
               />
               <input
                 placeholder="+91 12345667892"
@@ -190,9 +212,14 @@ const Address = () => {
             {/* //border blue */}
             {/* Address */}
             <div style={{ display: "flex" }}>
-              <Checkbox  inputProps={{ 'aria-label': 'controlled' }} />
+              <Checkbox inputProps={{ "aria-label": "controlled" }} />
               <InputLabel
-                style={{ fontSize: 16, fontWeight: 600, marginTop: "15px",color:"black" }}
+                style={{
+                  fontSize: 16,
+                  fontWeight: 600,
+                  marginTop: "15px",
+                  color: "black",
+                }}
               >
                 Same As Present Address
               </InputLabel>
@@ -201,13 +228,17 @@ const Address = () => {
               <InputLabel className={classes.inputLabel}>Address</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "42%" }}
+                style={{ marginLeft: "43.5%" }}
               >
                 Locality(Optional)
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
               <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* ----city /country------ */}
@@ -218,19 +249,23 @@ const Address = () => {
               </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "32%" }}
+                style={{ marginLeft: "35%" }}
               >
                 Country
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo}/>
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ width:"48%" ,marginRight:"2%"}}
+              />
               <Select
                 options={options}
                 value={value}
                 onChange={changeHandler}
                 className={classes.inputTwo}
-                margin={{marginLeft:"-1%"}}
+                margin={{ marginLeft: "-1%" }}
               />
             </div>
             {/* -----------------State And District---------------------- */}
@@ -238,28 +273,43 @@ const Address = () => {
               <InputLabel className={classes.inputLabel}>State</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "45.2%" }}
+                style={{ marginLeft: "46.5%" }}
               >
                 District
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
               <input variant="outlined" className={classes.inputTwo} />
             </div>
             {/* -----------------pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
-              <InputLabel className={classes.inputLabel}>Pin Code</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "41.2%" }}
+                style={{ marginRight: "43%" }}
               >
+                Pin Code
+              </InputLabel>
+              <InputLabel className={classes.inputLabel}>
                 Mobile Number
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
-              <input type="number" variant="outlined" className={classes.inputTwo} />
-              <input type="number" variant="outlined" className={classes.inputTwo} />
+              <input
+                type="number"
+                variant="outlined"
+                className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
+              />
+              <input
+                type="number"
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
 
             {/* -------------contact details--------------------- */}
@@ -269,7 +319,7 @@ const Address = () => {
               </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "320px" }}
+                style={{ marginLeft: "38%" }}
               >
                 Phone Number
               </InputLabel>
@@ -280,6 +330,7 @@ const Address = () => {
                 type="email"
                 variant="outlined"
                 className={classes.inputTwo}
+                style={{ marginRight: "2%" }}
               />
               <input
                 placeholder="+91 12345667892"

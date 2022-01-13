@@ -22,8 +22,9 @@ const useStyle = makeStyles({
   },
   outerBorder: {
     border: "2px solid #1e81b0",
+    borderRadius: "25px",
     borderStyle: "dashed",
-    padding: "20px",
+    padding: "40px",
   },
   inputLabel: {
     fontSize: 18,
@@ -86,7 +87,7 @@ const Password = () => {
                     </InputLabel>
                     <InputLabel
                       className={classes.inputLabel}
-                      style={{ marginLeft: "360px" }}
+                      style={{ marginLeft: "42%" }}
                     >
                       Confirm Password
                     </InputLabel>
@@ -100,6 +101,7 @@ const Password = () => {
                     type="password"
                     variant="outlined"
                     className={classes.inputTwo}
+                    style={{ marginRight: "2%" }}
                   />
                   <input
                     name="confirmPassword"
@@ -115,12 +117,15 @@ const Password = () => {
                 </div>
                 {/* ----------------------- */}
                 <div className={classes.labelContainer}>
-                  <InputLabel className={classes.inputLabel} style={{marginTop:""}}>
+                  <InputLabel
+                    className={classes.inputLabel}
+                    style={{ marginTop: "" }}
+                  >
                     Security Question
                   </InputLabel>
                   <InputLabel
                     className={classes.inputLabel}
-                    style={{ marginLeft: "280px" }}
+                    style={{ marginLeft: "35%" }}
                   >
                     Security Answer
                   </InputLabel>
@@ -134,14 +139,18 @@ const Password = () => {
                       id="demo-simple-select"
                       label="Gender"
                       variant="outlined"
-                      style={{ width: "440px" ,height:"35px"}}
+                      style={{ width: "425px",marginRight:"5%", height: "35px"}}
                     >
-                      <MenuItem value={"aadhar"}>Aadhar</MenuItem>
-                      <MenuItem value={"pan"}>PAN</MenuItem>
-                      <MenuItem value={"other"}>Other</MenuItem>
+                      <MenuItem value={"pet"}>Pet Name</MenuItem>
+                      <MenuItem value={"color"}>Favorite Color</MenuItem>
+                      <MenuItem value={"movie"}>Favorite Movie</MenuItem>
                     </Select>
                   </div>
-                  <input variant="outlined" className={classes.inputTwo} />
+                  <input
+                    variant="outlined"
+                    className={classes.inputTwo}
+                    style={{ height: "30%",width:"50%",marginLeft:"1%",marginTop:"1%" }}
+                  />
                 </div>
               </div>
             </div>

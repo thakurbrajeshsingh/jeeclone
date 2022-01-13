@@ -38,8 +38,9 @@ const useStyle = makeStyles({
   },
   outerBorder: {
     border: "2px solid #1e81b0",
+    borderRadius: "25px",
     borderStyle: "dashed",
-    padding: "20px",
+    padding: "40px",
   },
   inputLabel: {
     fontSize: 18,
@@ -58,8 +59,8 @@ const useStyle = makeStyles({
   inputTwo: {
     width: "50%",
     padding: 5,
-    marginRight:"2%",
-    height:"30px"
+    marginRight: "2%",
+    height: "20px",
   },
 });
 
@@ -68,7 +69,6 @@ const SignupForm = () => {
   const [age, setAge] = useState("");
   const [identity, setIdentity] = useState("");
   const [value, onChange] = useState(new Date());
-
 
   // ---------------------- form validation---------------
   const initialValues = { name: "", father: "", mother: "" };
@@ -149,10 +149,15 @@ const SignupForm = () => {
                   focused
                 />
               </div>
-              <p style={{ color: "red" }}>{formErrors.name}</p>
+              <p style={{ color: "red", marginBottom: "-1%" }}>
+                {formErrors.name}
+              </p>
               {/* Parents Name */}
-              <div className={classes.labelContainer} style={{marginTop:"5px"}}>
-                <InputLabel className={classes.inputLabel} >
+              <div
+                className={classes.labelContainer}
+                style={{ marginTop: "5px" }}
+              >
+                <InputLabel className={classes.inputLabel}>
                   Father's Name
                 </InputLabel>
                 <InputLabel
@@ -170,7 +175,7 @@ const SignupForm = () => {
                   value={formValues.father}
                   onChange={handleChange}
                 />
-               
+
                 <input
                   name="mother"
                   variant="outlined"
@@ -178,21 +183,34 @@ const SignupForm = () => {
                   value={formValues.mother}
                   onChange={handleChange}
                 />
-                
               </div>
-              <div style={{display:"flex"}}>
-              <p style={{ color: "red",marginRight:"280px",marginTop:"10px"}}>{formErrors.father}</p>
-              <p style={{ color: "red",marginTop:"10px" }}>{formErrors.mother}</p>
+              <div style={{ display: "flex", marginBottom: "-2%" }}>
+                <p
+                  style={{
+                    color: "red",
+                    marginRight: "280px",
+                    marginTop: "10px",
+                   
+                  }}
+                >
+                  {formErrors.father}
+                </p>
+                <p style={{ color: "red", marginTop: "10px" }}>
+                  {formErrors.mother}
+                </p>
               </div>
               {/* -----------DoB and Gender--------------- */}
               {/* Label */}
               <div className={classes.labelContainer}>
-                <InputLabel className={classes.inputLabel} style={{marginLeft:"1%"}}>
+                <InputLabel
+                  className={classes.inputLabel}
+                  style={{ marginLeft: "0" }}
+                >
                   Date of Birth
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "38%" }}
+                  style={{ marginLeft: "39%" }}
                 >
                   Gender
                 </InputLabel>
@@ -202,7 +220,8 @@ const SignupForm = () => {
                 <DatePicker
                   onChange={onChange}
                   value={value}
-                  className={classes.inputTwo}
+                  // className={classes.inputTwo}
+                  style={{ fontSize: 15, height: "40px", width: "90%",fontSize:20 }}
                 />
 
                 {/* Gender selector */}
@@ -213,7 +232,7 @@ const SignupForm = () => {
                     value={age}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "100%",height:"40px" }}
+                    style={{ width: "95%", height: "40px", marginLeft: "65%" }}
                   >
                     <MenuItem value={"male"}>Male</MenuItem>
                     <MenuItem value={"female"}>Female</MenuItem>
@@ -225,8 +244,10 @@ const SignupForm = () => {
 
               {/* Identity  section */}
               <div className={classes.labelContainer}>
-                <InputLabel className={classes.inputLabel}
-                style={{ marginLeft: "1%" }}>
+                <InputLabel
+                  className={classes.inputLabel}
+                  style={{ marginLeft: "1%" }}
+                >
                   Identity Type
                 </InputLabel>
                 <InputLabel
@@ -246,7 +267,7 @@ const SignupForm = () => {
                     value={identity}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "100%",height:"40px" }}
+                    style={{ width: "100%", height: "40px" }}
                   >
                     <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                     <MenuItem value={"pan"}>PAN</MenuItem>
@@ -256,9 +277,9 @@ const SignupForm = () => {
                 <input variant="outlined" className={classes.inputTwo} />
               </div>
             </div>
-            <Address  />
-            
-              {/* <Checkbox /> */}
+            <Address />
+
+            {/* <Checkbox /> */}
             <Password />
             <CaptchaTest />
             <button

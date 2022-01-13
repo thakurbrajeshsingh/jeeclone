@@ -57,8 +57,9 @@ class CaptchaTest extends Component {
             margin: "10px 10px 10px 0%",
             width: "96.3%",
             border: "2px solid #1e81b0",
+            borderRadius: "25px",
             borderStyle: "dashed",
-            padding: "15px",
+            padding: "40px",
           }}
         >
           <div
