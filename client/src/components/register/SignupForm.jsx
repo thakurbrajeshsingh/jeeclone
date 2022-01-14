@@ -208,7 +208,7 @@ const SignupForm = () => {
               <div className={classes.labelContainer}>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "0" }}
+                  style={{  }}
                 >
                   Date of Birth
                 </InputLabel>
@@ -224,12 +224,8 @@ const SignupForm = () => {
                 <DatePicker
                   onChange={onChange}
                   value={value}
-                  // className={classes.inputTwo}
                   style={{
-                    fontSize: 15,
-                    height: "40px",
-                    width: "90%",
-                    fontSize: 20,
+                    marginRight:"120px"
                   }}
                 />
 
@@ -241,7 +237,7 @@ const SignupForm = () => {
                     value={age}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "95%", height: "40px", marginLeft: "65%" }}
+                    style={{ width: "20%", height: "40px" }}
                   >
                     <MenuItem value={"male"}>Male</MenuItem>
                     <MenuItem value={"female"}>Female</MenuItem>
