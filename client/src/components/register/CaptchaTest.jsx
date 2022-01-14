@@ -53,9 +53,9 @@ class CaptchaTest extends Component {
 
         <div
           style={{
-            padding: "0.1% 5%",
+            padding: "0.1% 0.1%",
             margin: "10px 10px 10px 0%",
-            width: "96.3%",
+            width: "93%",
             border: "2px solid #1e81b0",
             borderRadius: "25px",
             borderStyle: "dashed",
@@ -77,10 +77,9 @@ class CaptchaTest extends Component {
           <div
             style={{
               display: "flex",
-              width: "800px",
+              width: "78%",
               margin: "10px 10px 10px 0px",
               padding: "10px",
-              
             }}
           >
             <input
@@ -88,19 +87,16 @@ class CaptchaTest extends Component {
               id="user_captcha_input"
               name="user_captcha_input"
               type="text"
-              style={{ width: "450px"}}
+              style={{ width: "90%", marginRight: "5%" }}
             />
-            <div style={{margin:"0px 5px 0px 15px"}}>
-            <LoadCanvasTemplate/>
+            <div style={{ margin: "0px 5px 0px 0px" }}>
+              <LoadCanvasTemplate />
             </div>
-            <button onClick={() => this.doSubmit()}
-          style={{width:"200px",}}
-        >
-          Verify Captcha
-        </button>
+            <button onClick={() => this.doSubmit()} style={{ width: "40%" }}>
+              Verify Captcha
+            </button>
           </div>
         </div>
-        
       </>
     );
   }

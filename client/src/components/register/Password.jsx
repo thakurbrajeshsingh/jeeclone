@@ -139,7 +139,7 @@ const Password = () => {
                       id="demo-simple-select"
                       label="Gender"
                       variant="outlined"
-                      style={{ width: "425px",marginRight:"5%", height: "35px"}}
+                      style={{ width: "100%",marginRight:"5%", height: "35px"}}
                     >
                       <MenuItem value={"pet"}>Pet Name</MenuItem>
                       <MenuItem value={"color"}>Favorite Color</MenuItem>
