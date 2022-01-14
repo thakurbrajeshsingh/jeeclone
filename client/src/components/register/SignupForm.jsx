@@ -76,9 +76,14 @@ const SignupForm = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
+
+
+
+  // console.log("form value is ",formValues.name)
   // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // console.log(e.target.value);
     setFormValues({ ...formValues, [name]: value });
   };
   const handleSubmit = (e) => {
@@ -190,7 +195,6 @@ const SignupForm = () => {
                     color: "red",
                     marginRight: "280px",
                     marginTop: "10px",
-                   
                   }}
                 >
                   {formErrors.father}
@@ -221,7 +225,12 @@ const SignupForm = () => {
                   onChange={onChange}
                   value={value}
                   // className={classes.inputTwo}
-                  style={{ fontSize: 15, height: "40px", width: "90%",fontSize:20 }}
+                  style={{
+                    fontSize: 15,
+                    height: "40px",
+                    width: "90%",
+                    fontSize: 20,
+                  }}
                 />
 
                 {/* Gender selector */}

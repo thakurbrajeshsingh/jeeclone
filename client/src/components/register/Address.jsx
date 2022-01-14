@@ -67,6 +67,58 @@ const useStyle = makeStyles({
 });
 
 const Address = () => {
+  // Address Validation
+  const initialValues = {
+    Caddress: "",
+    Clocality: "",
+    Ccity: "",
+    Ccountry: "",
+    Cstate: "",
+    Cdistrict: "",
+    Cpin: "",
+    Cmobile: "",
+    Cemail: "",
+    Cphone: "",
+  };
+  const initialValuesP = {
+    Paddress: "",
+    Plocality: "",
+    Pcity: "",
+    Pcountry: "",
+    Pstate: "",
+    Pdistrict: "",
+    Ppin: "",
+    Pmobile: "",
+    Pemail: "",
+    Pphone: "",
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formValuesP, setFormValuesP] = useState(initialValuesP);
+
+  // checkbox button
+  const [checked, setChecked] = useState(false);
+
+  // stored the user input value to formValues
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // console.log(e.target.value);
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const fillPermanent = (e) => {
+    // setChecked(true);
+    if (checked === false) {
+      const { name, value } = e.target;
+      setFormValuesP({...formValues, [name]: value });
+    }
+  };
+  const handleChangeP = (e) => {
+    const { name, value } = e.target;
+    // console.log(e.target.value);
+    setFormValuesP({ ...formValuesP, [name]: value });
+  };
+
+  // ------------------------------------------
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
 
@@ -99,11 +151,20 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Caddress"
+                value={formValues.Caddress}
+                onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                name="Clocality"
+                value={formValues.Clocality}
+                onChange={handleChange}
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
             {/* ---- present city /country------ */}
             {/* Address */}
@@ -120,14 +181,18 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Ccity"
+                value={formValues.Ccity}
+                onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ width: "47%", marginRight: "2%" }}
               />
               <Select
+                name="Ccountry"
+                value={formValues.Ccountry}
+                onChange={handleChange}
                 options={options}
-                value={value}
-                onChange={changeHandler}
                 className={classes.inputSelect}
                 // styles={{width: "400px"}}
               />
@@ -144,11 +209,21 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Cstate"
+                // value="hello"
+                value={formValues.Cstate}
+                onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                name="Cdistrict"
+                value={formValues.Cdistrict}
+                onChange={handleChange}
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
             {/* ----------------- present pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
@@ -162,11 +237,20 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Cpin"
+                value={formValues.Cpin}
+                onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                name="Cmobile"
+                value={formValues.Cmobile}
+                onChange={handleChange}
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
 
             {/* ------------- present contact details--------------------- */}
@@ -183,6 +267,9 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Cemail"
+                value={formValues.Cemail}
+                onChange={handleChange}
                 placeholder="xyz@stlindia.com"
                 type="email"
                 variant="outlined"
@@ -190,6 +277,9 @@ const Address = () => {
                 style={{ marginRight: "2%" }}
               />
               <input
+                name="Cphone"
+                value={formValues.Cphone}
+                onChange={handleChange}
                 placeholder="+91 12345667892"
                 type="number"
                 variant="outlined"
@@ -212,7 +302,12 @@ const Address = () => {
             {/* //border blue */}
             {/* Address */}
             <div style={{ display: "flex" }}>
-              <Checkbox inputProps={{ "aria-label": "controlled" }} />
+              <input
+                type="checkbox"
+                defaultChecked={checked}
+                // onChange={fillPermanent}
+                onChange={() => setChecked(!checked)}
+              />
               <InputLabel
                 style={{
                   fontSize: 16,
@@ -235,11 +330,20 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Paddress"
+                value={checked ? formValues.Caddress : formValues.Paddress}
+                onChange={handleChangeP}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                name="Plocality"
+                value={checked ? formValues.Clocality : formValues.Plocality}
+                onChange={handleChangeP}
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
             {/* ----city /country------ */}
             {/* Address */}
@@ -256,14 +360,18 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Pcity"
+                value={checked ? formValues.Ccity : formValues.Pcity}
+                onChange={handleChangeP}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ width:"48%" ,marginRight:"2%"}}
+                style={{ width: "48%", marginRight: "2%" }}
               />
               <Select
+                name="Pcountry"
+                value={checked ? formValues.Ccountry : formValues.Pcountry}
+                onChange={handleChangeP}
                 options={options}
-                value={value}
-                onChange={changeHandler}
                 className={classes.inputTwo}
                 margin={{ marginLeft: "-1%" }}
               />
@@ -280,11 +388,20 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Pstate"
+                value={checked ? formValues.Cstate : formValues.Pstate}
+                onChange={handleChangeP}
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
-              <input variant="outlined" className={classes.inputTwo} />
+              <input
+                name="Pdistrict"
+                value={checked ? formValues.Cdistrict : formValues.Pdistrict}
+                onChange={handleChangeP}
+                variant="outlined"
+                className={classes.inputTwo}
+              />
             </div>
             {/* -----------------pin & mobile---------------------- */}
             <div className={classes.labelContainer}>
@@ -300,12 +417,18 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Ppin"
+                value={checked ? formValues.Cpin : formValues.Ppin}
+                onChange={handleChangeP}
                 type="number"
                 variant="outlined"
                 className={classes.inputTwo}
                 style={{ marginRight: "2%" }}
               />
               <input
+                name="Pmobile"
+                value={checked ? formValues.Cmobile : formValues.Pmobile}
+                onChange={handleChangeP}
                 type="number"
                 variant="outlined"
                 className={classes.inputTwo}
@@ -326,6 +449,9 @@ const Address = () => {
             </div>
             <div style={{ display: "flex" }}>
               <input
+                name="Pemail"
+                value={checked ? formValues.Cemail : formValues.Pemail}
+                onChange={handleChangeP}
                 placeholder="xyz@stlindia.com"
                 type="email"
                 variant="outlined"
@@ -333,6 +459,9 @@ const Address = () => {
                 style={{ marginRight: "2%" }}
               />
               <input
+                name="Pphone"
+                value={checked ? formValues.Cphone : formValues.Pphone}
+                onChange={handleChangeP}
                 placeholder="+91 12345667892"
                 type="number"
                 variant="outlined"

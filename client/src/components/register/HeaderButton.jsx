@@ -17,10 +17,9 @@ import {
 
 const useStyle = makeStyles({
   headerButton: {
-    width: "360px",
-    height: "70px",
+    width: "22.5rem",
+    height: "50px",
 
-    // marginLeft: "90px",
   },
 });
 
@@ -43,8 +42,8 @@ const HeaderButton = () => {
           className={classes.headerButton}
           style={{
             background: "#CCCCCC",
-            marginLeft: "1px",
-            marginRight: "1px",
+            marginLeft: "0.2%",
+            marginRight: "0.2%",
             color:"#ffffff",
             fontSize:"20px",
             fontWeight:500

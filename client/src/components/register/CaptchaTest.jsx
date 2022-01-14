@@ -54,12 +54,12 @@ class CaptchaTest extends Component {
         <div
           style={{
             padding: "0.1% 0.1%",
-            margin: "10px 10px 10px 0%",
-            width: "93%",
+            margin: "10px 10px 10px 10px",
+            width: "90%",
             border: "2px solid #1e81b0",
             borderRadius: "25px",
             borderStyle: "dashed",
-            padding: "40px",
+            padding: 40,
           }}
         >
           <div
