@@ -17,9 +17,7 @@ import {
 
 const useStyle = makeStyles({
   headerButton: {
-    width: "22.5rem",
-    height: "50px",
-
+    width: "31.4%",
   },
 });
 
@@ -27,12 +25,14 @@ const HeaderButton = () => {
   const classes = useStyle();
   return (
     <>
-      <div style={{ display: "flex", marginTop: "0px", marginLeft: "200px" }}>
+      <div style={{ display: "flex",marginLeft:"15%",marginTop:"20vh" }}>
         <Button
           className={classes.headerButton}
           style={{ background: "#0066FF" ,
           color:"#ffffff",
-          fontSize:"20px",
+          width:"32%",
+          fontSize:"15px",
+          padding:"1%",
           fontWeight:500}}
         >
           Registration
@@ -43,9 +43,11 @@ const HeaderButton = () => {
           style={{
             background: "#CCCCCC",
             marginLeft: "0.2%",
+            width:"31%",
             marginRight: "0.2%",
             color:"#ffffff",
-            fontSize:"20px",
+            padding:"1%",
+            fontSize:"15px",
             fontWeight:500
           }}
         >
@@ -56,9 +58,12 @@ const HeaderButton = () => {
           className={classes.headerButton}
           style={{ background: "#CCCCCC",
           color:"#ffffff",
-          fontSize:"20px",
+          fontSize:"15px",
+          width:"31%",
+          padding:"1%",
           fontWeight:500 }}
         >
+
           Document Upload
         </Button>
       </div>

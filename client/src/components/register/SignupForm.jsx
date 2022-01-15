@@ -23,16 +23,15 @@ import Password from "./Password";
 const useStyle = makeStyles({
   container: {
     background: "#eeeee4",
-    marginTop: "9.3%",
   },
   form: {
-    margin: "0px 10px 10px 15%",
+    margin: "0% 2% 0% 15%",
     background: "#ffffff",
-    width: "70%",
-    padding: "0.1% 5%",
+    width: "69.4vw",
+    padding: "2% 5% 0% 5%",
   },
   formSubheading: {
-    fontSize: 25,
+    fontSize: "25px",
     fontWeight: 600,
     color: "#063970",
   },
@@ -40,25 +39,30 @@ const useStyle = makeStyles({
     border: "2px solid #1e81b0",
     borderRadius: "25px",
     borderStyle: "dashed",
-    padding: "40px",
+    padding: "2%",
   },
   inputLabel: {
-    fontSize: 18,
+    fontSize: "18px",
     color: "black",
     fontWeight: 500,
-    marginTop: 20,
+    marginTop: "2%",
   },
   input: {
     height: "30px",
-    marginTop: 10,
-    width: "98%",
+    width: "97%",
+  },
+  inputDiv:{
+    padding:"5%"
   },
   labelContainer: {
     display: "flex",
   },
+  dob:{
+    width:"50%"
+  },
   inputTwo: {
     width: "50%",
-    padding: 5,
+    padding: "1%",
     marginRight: "2%",
     height: "20px",
   },
@@ -75,9 +79,6 @@ const SignupForm = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
-
-
 
   // console.log("form value is ",formValues.name)
   // stored the user input value to formValues
@@ -136,7 +137,7 @@ const SignupForm = () => {
           <HeaderButton />
           <div className={classes.form}>
             {/* <HeaderButton /> */}
-            <div style={{ marginTop: "30px" }}>
+            <div>
               <Typography className={classes.formSubheading}>
                 Personal Details
               </Typography>
@@ -144,30 +145,33 @@ const SignupForm = () => {
             {/* name field */}
             <div className={classes.outerBorder}>
               <div className={classes.inputDiv}>
-                <InputLabel className={classes.inputLabel}>Name</InputLabel>
+                <InputLabel 
+                className={classes.inputLabel}
+                style={{marginTop:"-3%",marginLeft:"-5%"}}
+                >Name</InputLabel>
                 <input
                   name="name"
                   variant="outlined"
                   className={classes.input}
                   value={formValues.name}
                   onChange={handleChange}
+                  style={{marginLeft:"-5%",width:"107%"}}
                   focused
                 />
               </div>
-              <p style={{ color: "red", marginBottom: "-1%" }}>
+              <p style={{ color: "red",marginTop:"-4%",marginLeft:"1%"}}>
                 {formErrors.name}
               </p>
               {/* Parents Name */}
               <div
                 className={classes.labelContainer}
-                style={{ marginTop: "5px" }}
               >
-                <InputLabel className={classes.inputLabel}>
+                <InputLabel className={classes.inputLabel}  style={{marginTop:"-1%"}}>
                   Father's Name
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "37%" }}
+                  style={{ marginLeft: "37%",marginTop:"-1%" }}
                 >
                   Mother's Name
                 </InputLabel>
@@ -179,6 +183,7 @@ const SignupForm = () => {
                   className={classes.inputTwo}
                   value={formValues.father}
                   onChange={handleChange}
+                  style={{width:"50%"}}
                 />
 
                 <input
@@ -187,29 +192,27 @@ const SignupForm = () => {
                   className={classes.inputTwo}
                   value={formValues.mother}
                   onChange={handleChange}
+                  style={{width:"50%"}}
                 />
               </div>
               <div style={{ display: "flex", marginBottom: "-2%" }}>
                 <p
                   style={{
                     color: "red",
-                    marginRight: "280px",
-                    marginTop: "10px",
+                    marginRight: "30%",
+                    marginTop: "1%",
                   }}
                 >
                   {formErrors.father}
                 </p>
-                <p style={{ color: "red", marginTop: "10px" }}>
+                <p style={{ color: "red", marginTop: "1%",marginLeft:"1%" }}>
                   {formErrors.mother}
                 </p>
               </div>
               {/* -----------DoB and Gender--------------- */}
               {/* Label */}
               <div className={classes.labelContainer}>
-                <InputLabel
-                  className={classes.inputLabel}
-                  style={{  }}
-                >
+                <InputLabel className={classes.inputLabel}>
                   Date of Birth
                 </InputLabel>
                 <InputLabel
@@ -224,8 +227,9 @@ const SignupForm = () => {
                 <DatePicker
                   onChange={onChange}
                   value={value}
+                  className={classes.dob}
                   style={{
-                    marginRight:"120px"
+                    width:"100%",marginRight:"2%"
                   }}
                 />
 
@@ -237,7 +241,7 @@ const SignupForm = () => {
                     value={age}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "20%", height: "40px" }}
+                    style={{ width: "100%",marginTop:"-2%", height: "38px",marginLeft:"2%" }}
                   >
                     <MenuItem value={"male"}>Male</MenuItem>
                     <MenuItem value={"female"}>Female</MenuItem>
@@ -248,7 +252,7 @@ const SignupForm = () => {
               {/* -----------identification------------- */}
 
               {/* Identity  section */}
-              <div className={classes.labelContainer}>
+              <div className={classes.labelContainer} style={{marginTop:"2%"}}>
                 <InputLabel
                   className={classes.inputLabel}
                   style={{ marginLeft: "1%" }}
@@ -272,14 +276,14 @@ const SignupForm = () => {
                     value={identity}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "100%", height: "40px" }}
+                    style={{ width: "105%", height: "40px",marginTop:"-2%" }}
                   >
                     <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                     <MenuItem value={"pan"}>PAN</MenuItem>
                     <MenuItem value={"other"}>Other</MenuItem>
                   </Select>
                 </div>
-                <input variant="outlined" className={classes.inputTwo} />
+                <input variant="outlined" className={classes.inputTwo} style={{width:"50%",marginLeft:"2%",height:"20%"}}/>
               </div>
             </div>
             <Address />
