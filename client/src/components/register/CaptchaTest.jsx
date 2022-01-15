@@ -25,7 +25,7 @@ class CaptchaTest extends Component {
     let user_captcha = document.getElementById("user_captcha_input").value;
 
     if (validateCaptcha(user_captcha) == true) {
-      // alert("Captcha Matched");
+      alert("Captcha Matched");
       loadCaptchaEnginge(6);
       document.getElementById("user_captcha_input").value = "";
     } else {
@@ -41,7 +41,7 @@ class CaptchaTest extends Component {
         <div>
           <Typography
             style={{
-              marginTop: "10px",
+              marginTop: "3%",
               fontSize: "20px",
               fontWeight: 600,
               color: "#063970",
@@ -53,13 +53,12 @@ class CaptchaTest extends Component {
 
         <div
           style={{
-            padding: "0.1% 0.1%",
-            margin: "10px 10px 10px 10px",
+            margin: "1% 1% 1% 1%",
             width: "90%",
             border: "2px solid #1e81b0",
             borderRadius: "25px",
             borderStyle: "dashed",
-            padding: 40,
+            padding: "4%",
           }}
         >
           <div
@@ -77,9 +76,9 @@ class CaptchaTest extends Component {
           <div
             style={{
               display: "flex",
-              width: "78%",
-              margin: "10px 10px 10px 0px",
-              padding: "10px",
+          
+              padding: "2%",
+              justifyContent:"space-between"
             }}
           >
             <input
@@ -87,12 +86,12 @@ class CaptchaTest extends Component {
               id="user_captcha_input"
               name="user_captcha_input"
               type="text"
-              style={{ width: "90%", marginRight: "5%" }}
+              style={{  width:"50%" }}
             />
-            <div style={{ margin: "0px 5px 0px 0px" }}>
+            <div>
               <LoadCanvasTemplate />
             </div>
-            <button onClick={() => this.doSubmit()} style={{ width: "40%" }}>
+            <button onClick={() => this.doSubmit()} style={{ width: "20%" }}>
               Verify Captcha
             </button>
           </div>

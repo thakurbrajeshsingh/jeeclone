@@ -2,13 +2,10 @@ import React, { Component } from "react";
 
 import { AppBar, Toolbar, makeStyles, Typography } from "@material-ui/core";
 
-
-
-
 const useStyle = makeStyles({
   header: {
     background: "#FFFFFF",
-    height: 75,
+    height: "5rem",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -17,17 +14,13 @@ const useStyle = makeStyles({
   },
   logoNIC: {
     marginTop: 10,
+    background:"red"
   },
   headerText: {
-    fontSize: 25,
+    color: "#002C5B",
+    fontSize: "25px",
     fontWeight: 600,
-    alignItems: "center",
   },
-  headerText:{
-    color:"#002C5B",
-    fontSize: 25, 
-    fontWeight: 600 
-  }
 });
 
 const Header = () => {
@@ -41,14 +34,15 @@ const Header = () => {
           <img src={logoME} alt="logo" className={classes.logoME} />
           <Typography className={classes.headerText}>
             Joint Entrance Examination (Main)
-            <Typography style={{fontSize:20,fontWeight:500,textAlign:"center"}}>
+            <Typography
+              style={{ fontSize: "20px", textAlign: "center" }}
+            >
               JEE (Main) 2021
             </Typography>
           </Typography>
           <img src={logoNIC} alt="logo" className={classes.logoNIC} />
         </Toolbar>
       </AppBar>
-      
     </>
   );
 };

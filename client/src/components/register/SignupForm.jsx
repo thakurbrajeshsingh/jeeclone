@@ -290,7 +290,7 @@ const SignupForm = () => {
             <button
               style={{
                 background: "#ff8000",
-                marginLeft: "350px",
+                marginLeft: "35%",
                 marginTop: "20px",
                 marginBottom: "20px",
                 color: "#ffffff",
