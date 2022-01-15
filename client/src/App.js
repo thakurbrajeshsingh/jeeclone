@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core";
 
 
 // components 
-import Header from "./components/header/Header";
 import Navbar from './components/header/Navbar';
 import MainL from "./components/mainContent/currentNews/MainL";
 import MainR from "./components/rightSection/MainR";
@@ -22,7 +21,7 @@ function App() {
   const classes = useStyle();
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       {/* Left Side */}
       <MainL />

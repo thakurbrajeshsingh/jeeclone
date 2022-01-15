@@ -1,10 +1,16 @@
 import React from "react";
 import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 
+
+
+import Header from "./Header";
+
+
 const useStyle = makeStyles({
   navbar: {
-    marginTop: 76,
-    height: 50,
+    marginTop: "6%",
+    width:"100vw",
+    height: "8%",
     background: "#002C56",
   },
   navButton: {
@@ -19,7 +25,7 @@ const useStyle = makeStyles({
 
 const defaultProps = {
   bgcolor: "background.paper",
-  // m: 1,
+  m: 1,
   width: "0.1rem",
   height: "4rem" ,
   marginTop:-2
@@ -31,8 +37,11 @@ const Navbar = () => {
   return (
     <>
       <AppBar className={classes.navbar}>
+     
         <Toolbar>
+        <Header />
           <Box className={classes.navButton}>
+          
             <Button className={classes.navButton} >Home</Button>
             <Box borderRight={1} {...defaultProps} />
             <Button className={classes.navButton}>Contact Us</Button>

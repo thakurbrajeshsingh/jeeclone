@@ -5,7 +5,7 @@ import { AppBar, Toolbar, makeStyles, Typography } from "@material-ui/core";
 const useStyle = makeStyles({
   header: {
     background: "#FFFFFF",
-    height: "5rem",
+    height: "5%",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -32,10 +32,10 @@ const Header = () => {
       <AppBar>
         <Toolbar className={classes.header}>
           <img src={logoME} alt="logo" className={classes.logoME} />
-          <Typography className={classes.headerText}>
+          <Typography className={classes.headerText} style={{textAlign:"center"}}>
             Joint Entrance Examination (Main)
             <Typography
-              style={{ fontSize: "20px", textAlign: "center" }}
+              style={{ fontSize: "20px",textAlign:"center" }}
             >
               JEE (Main) 2021
             </Typography>
