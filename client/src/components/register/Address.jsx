@@ -14,13 +14,11 @@ import {
 
 const useStyle = makeStyles({
   form: {
-    margin: "10px 10px 10px 0px",
     background: "#ffffff",
     width: "100%",
-    padding: "0.1% 0.5%",
   },
   formSubheading: {
-    fontSize: 25,
+    fontSize: "25px",
     fontWeight: 600,
     color: "#063970",
   },
@@ -28,41 +26,34 @@ const useStyle = makeStyles({
     border: "2px solid #1e81b0",
     borderRadius: "25px",
     borderStyle: "dashed",
-    padding: "40px",
+    padding: "4%",
   },
   inputLabel: {
-    fontSize: 18,
+    fontSize: "18px",
     color: "black",
     fontWeight: 500,
-    marginTop: 20,
-  },
-  input: {
-    marginTop: 10,
-    width: "100%",
+    marginTop: "2%",
   },
   label: {
     fontWeight: 600,
     display: "flex",
     flexDirection: "row",
-    margin: "10px",
   },
   labelContainer: {
     display: "flex",
   },
   inputTwo: {
     width: "50%",
-    padding: 5,
-    height: "20px",
+    height: "30px",
   },
   inputSelect: {
     width: "50%",
-    padding: 5,
+    padding: "1px",
     height: "20px",
   },
   formInner: {
     display: "flex",
     background: "#ffffff",
-    margin: "0px 150px",
   },
 });
 
@@ -109,7 +100,7 @@ const Address = () => {
     // setChecked(true);
     if (checked === false) {
       const { name, value } = e.target;
-      setFormValuesP({...formValues, [name]: value });
+      setFormValuesP({ ...formValues, [name]: value });
     }
   };
   const handleChangeP = (e) => {
@@ -132,7 +123,7 @@ const Address = () => {
       {/*  address label */}
       <div>
         <div className={classes.form}>
-          <div style={{ marginTop: 30 }}>
+          <div style={{ marginTop: "5%" }}>
             <Typography className={classes.formSubheading}>
               Present Address
             </Typography>
@@ -141,12 +132,14 @@ const Address = () => {
             {/* //border blue */}
             {/* Address */}
             <div className={classes.labelContainer}>
-              <InputLabel className={classes.inputLabel}>Address</InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "43.5%" }}
+                style={{ marginRight: "43%" }}
               >
-                Locality(Optional)
+                Address
+              </InputLabel>
+              <InputLabel className={classes.inputLabel}>
+                Locality
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
@@ -174,7 +167,7 @@ const Address = () => {
               </InputLabel>
               <InputLabel
                 className={classes.inputLabel}
-                style={{ marginLeft: "34%" }}
+                style={{ width:"50%",marginLeft: "35%" }}
               >
                 Country
               </InputLabel>
@@ -186,7 +179,7 @@ const Address = () => {
                 onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ width: "47%", marginRight: "2%" }}
+                style={{ width: "49%", marginRight: "2%" }}
               />
               <Select
                 name="Ccountry"
@@ -194,7 +187,6 @@ const Address = () => {
                 onChange={handleChange}
                 options={options}
                 className={classes.inputSelect}
-                // styles={{width: "400px"}}
               />
             </div>
             {/* ----------------- present State And District---------------------- */}
@@ -215,7 +207,7 @@ const Address = () => {
                 onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ marginRight: "2%" }}
+                style={{ width:"50%",marginRight: "2%" }}
               />
               <input
                 name="Cdistrict"
@@ -223,6 +215,7 @@ const Address = () => {
                 onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
+                style={{ width:"50%"}}
               />
             </div>
             {/* ----------------- present pin & mobile---------------------- */}
@@ -242,7 +235,7 @@ const Address = () => {
                 onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ marginRight: "2%" }}
+                style={{   width:"50%",marginRight: "2%" }}
               />
               <input
                 name="Cmobile"
@@ -250,6 +243,7 @@ const Address = () => {
                 onChange={handleChange}
                 variant="outlined"
                 className={classes.inputTwo}
+                style={{ width:"50%"}}
               />
             </div>
 
@@ -325,7 +319,7 @@ const Address = () => {
                 className={classes.inputLabel}
                 style={{ marginLeft: "43.5%" }}
               >
-                Locality(Optional)
+                Locality
               </InputLabel>
             </div>
             <div style={{ display: "flex" }}>
@@ -365,7 +359,7 @@ const Address = () => {
                 onChange={handleChangeP}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ width: "48%", marginRight: "2%" }}
+                style={{ width: "49%", marginRight: "2%" }}
               />
               <Select
                 name="Pcountry"
@@ -393,7 +387,7 @@ const Address = () => {
                 onChange={handleChangeP}
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ marginRight: "2%" }}
+                style={{ width:"50%", marginRight: "2%" }}
               />
               <input
                 name="Pdistrict"
@@ -423,7 +417,7 @@ const Address = () => {
                 type="number"
                 variant="outlined"
                 className={classes.inputTwo}
-                style={{ marginRight: "2%" }}
+                style={{marginRight: "2%" }}
               />
               <input
                 name="Pmobile"

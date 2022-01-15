@@ -16,7 +16,7 @@ const useStyle = makeStyles({
     padding: "0.1% 5%",
   },
   formSubheading: {
-    fontSize: 25,
+    fontSize: "25px",
     fontWeight: 600,
     color: "#063970",
   },
@@ -30,11 +30,7 @@ const useStyle = makeStyles({
     fontSize: 18,
     color: "black",
     fontWeight: 500,
-    marginTop: 20,
-  },
-  input: {
-    marginTop: 10,
-    width: "100%",
+    marginTop: "1%",
   },
   labelContainer: {
     display: "flex",
@@ -73,7 +69,7 @@ const Password = () => {
         <div className={classes.container}>
           <form>
             <div className={classes.form}>
-              <div style={{ marginTop: 10 }}>
+              <div style={{ marginTop: "3%" }}>
                 <Typography className={classes.formSubheading}>
                   Choose Password
                 </Typography>
@@ -125,7 +121,7 @@ const Password = () => {
                   </InputLabel>
                   <InputLabel
                     className={classes.inputLabel}
-                    style={{ marginLeft: "35%" }}
+                    style={{ marginLeft: "34.5%" }}
                   >
                     Security Answer
                   </InputLabel>
@@ -139,7 +135,7 @@ const Password = () => {
                       id="demo-simple-select"
                       label="Gender"
                       variant="outlined"
-                      style={{ width: "100%",marginRight:"5%", height: "35px"}}
+                      style={{ width: "99%", height: "35px"}}
                     >
                       <MenuItem value={"pet"}>Pet Name</MenuItem>
                       <MenuItem value={"color"}>Favorite Color</MenuItem>
@@ -149,7 +145,7 @@ const Password = () => {
                   <input
                     variant="outlined"
                     className={classes.inputTwo}
-                    style={{ height: "30%",width:"50%",marginLeft:"1%",marginTop:"1%" }}
+                    style={{ height: "30%",width:"48%",marginLeft:"1%",marginTop:"1%" }}
                   />
                 </div>
               </div>
