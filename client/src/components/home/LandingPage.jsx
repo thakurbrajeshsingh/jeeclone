@@ -4,6 +4,7 @@ import React from "react";
 import MainL from "../mainContent/currentNews/MainL";
 import MainR from "../rightSection/MainR";
 import MainC from "../center/MainC";
+import FooterMain from "../footer/Main";
 
 const LandingPage = () => {
   return (
@@ -11,6 +12,7 @@ const LandingPage = () => {
       <MainL />
       <MainR />
       <MainC />
+      <FooterMain />
     </>
   );
 };
