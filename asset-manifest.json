@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/jeeclone/static/css/main.e31871cb.css",
-    "main.js": "/jeeclone/static/js/main.ccd23cbb.js",
+    "main.js": "/jeeclone/static/js/main.3e5cc671.js",
     "static/js/787.db9b214f.chunk.js": "/jeeclone/static/js/787.db9b214f.chunk.js",
     "index.html": "/jeeclone/index.html",
     "main.e31871cb.css.map": "/jeeclone/static/css/main.e31871cb.css.map",
-    "main.ccd23cbb.js.map": "/jeeclone/static/js/main.ccd23cbb.js.map",
+    "main.3e5cc671.js.map": "/jeeclone/static/js/main.3e5cc671.js.map",
     "787.db9b214f.chunk.js.map": "/jeeclone/static/js/787.db9b214f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e31871cb.css",
-    "static/js/main.ccd23cbb.js"
+    "static/js/main.3e5cc671.js"
   ]
 }
