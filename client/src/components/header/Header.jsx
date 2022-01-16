@@ -37,7 +37,7 @@ const Header = () => {
             <Typography
               style={{ fontSize: "20px",textAlign:"center" }}
             >
-              JEE (Main) 2021
+              JEE (Main) 2022
             </Typography>
           </Typography>
           <img src={logoNIC} alt="logo" className={classes.logoNIC} />
