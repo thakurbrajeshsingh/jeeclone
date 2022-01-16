@@ -2,27 +2,43 @@ import React from "react";
 
 import { Box, makeStyles, Typography, Button } from "@material-ui/core";
 
+// react Route
+import { Link } from "react-router-dom";
+
 const useStyle = makeStyles({
-    btnBox:{
-        marginTop:25,
-    },
+  btnContainer: {
+    marginTop: "2%",
+  },
   btn1: {
-    background:"#00468A",
+    background: "#00468A",
     width: "100%",
-    color:"#FFFFFF",
-    lineHeight:2.1,
-    fontWeight:600
+    color: "#FFFFFF",
+    lineHeight: 2.1,
+    fontWeight: 600,
+    marginTop: "2%",
+    pointerEvents: "none",
+    textDecoration:"none"
   },
 });
 
-const CenterButton = (props) => {
+const CenterButton = () => {
   const classes = useStyle();
   return (
     <>
-    <Box className={classes.btnBox}>
-      <Button className={classes.btn1} variant="contained"  disableElevation>
-        {props.btn}
-      </Button>
+      <Box className={classes.btnContainer}>
+        <Link to="/register">
+          <Button
+            className={classes.btn1}
+            variant="contained"
+            style={{}}
+            disableElevation
+          >
+            JEE(Main) New Registration
+          </Button>
+        </Link>
+        <Button className={classes.btn1} variant="contained" disableElevation>
+          JEE(Main) Old User Login
+        </Button>
       </Box>
     </>
   );

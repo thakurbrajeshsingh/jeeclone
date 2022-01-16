@@ -1,15 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 
+// Recat router
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // components 
 import Navbar from './components/header/Navbar';
-import MainL from "./components/mainContent/currentNews/MainL";
-import MainR from "./components/rightSection/MainR";
-import MainC from "./components/center/MainC";
-import Main from './components/footer/Main';
-
-
+import FooterMain from './components/footer/Main';
+import Register from "./components/register/Register";
+import LandingPage from "./components/home/LandingPage";
 const useStyle = makeStyles({
 
 })
@@ -20,25 +19,15 @@ const useStyle = makeStyles({
 function App() {
   const classes = useStyle();
   return (
-    <div className="App">
-      {/* <Header /> */}
+    <BrowserRouter>
       <Navbar />
-      {/* Left Side */}
-      <MainL />
-      {/* Center side */}
-
-      {/* Rigth Side */}
-      <MainR />
-      {/* Center  */}
-      <MainC />
-
-      {/* Footer */}
-      <Main />
-
-      {/* Login Page */}
-      
-
-    </div>
+    <Switch>
+    <Route exact path='/' component={LandingPage} />
+    <Route path='/register' component={Register} />
+    <LandingPage />
+    </Switch>
+      {/* <FooterMain /> */}
+    </BrowserRouter>
 
   );
 }

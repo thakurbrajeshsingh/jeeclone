@@ -14,7 +14,7 @@ const useStyle = makeStyles({
   container: {
     background: "#002C56",
     display:"flex",
-    height:60
+    height:"20%"
   },
   text:{
     textAlign:"center",

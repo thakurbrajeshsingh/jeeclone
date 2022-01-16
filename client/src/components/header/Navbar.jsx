@@ -1,15 +1,18 @@
 import React from "react";
 import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 
+import LandingPage from "../home/LandingPage";
 
+
+
+import { Link } from "react-router-dom";
 
 import Header from "./Header";
-
 
 const useStyle = makeStyles({
   navbar: {
     marginTop: "6%",
-    width:"100vw",
+    width: "100vw",
     height: "8%",
     background: "#002C56",
   },
@@ -17,9 +20,8 @@ const useStyle = makeStyles({
     marginTop: "-1%",
     color: "#FFFFFF",
     borderColor: "white",
-    display:"flex",
-    justifyContent:"center",
-
+    display: "flex",
+    justifyContent: "center",
   },
 });
 
@@ -27,8 +29,8 @@ const defaultProps = {
   bgcolor: "background.paper",
   m: 1,
   width: "0.1rem",
-  height: "4rem" ,
-  marginTop:-2
+  height: "4rem",
+  marginTop: -2,
 };
 
 const Navbar = () => {
@@ -37,12 +39,10 @@ const Navbar = () => {
   return (
     <>
       <AppBar className={classes.navbar}>
-     
         <Toolbar>
-        <Header />
+          <Header />
           <Box className={classes.navButton}>
-          
-            <Button className={classes.navButton} >Home</Button>
+          <Link to='/'><Button className={classes.navButton}>Home</Button></Link>
             <Box borderRight={1} {...defaultProps} />
             <Button className={classes.navButton}>Contact Us</Button>
             <Box {...defaultProps} borderLeft={0} />

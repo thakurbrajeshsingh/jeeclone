@@ -2,14 +2,25 @@ import React from "react";
 
 import { Box, makeStyles, Typography, Divider } from "@material-ui/core";
 
+
+// Recat router
+import { BrowserRouter,Switch,Route,Link } from 'react-router-dom';
+
+
+
+
 // Components
 import CenterButton from "./centerButtons/CenterButton";
+import Register from '../register/Register';
+
+
 
 const useStyle = makeStyles({
   containerBox: {
     textAlign: "left",
     width: "50%",
     marginLeft: "25%",
+    marginBottom: "20%" 
   },
   text: {
     color: "black",
@@ -42,6 +53,7 @@ const MainC = () => {
   const classes = useStyle();
   return (
     <>
+  
       <Box className={classes.containerBox}>
         <Typography className={classes.text}>
           Introduction
@@ -50,9 +62,11 @@ const MainC = () => {
         <Typography className={classes.content}>{des1}</Typography>
         <Typography className={classes.content}>{des2}</Typography>
         <Typography className={classes.content}>{des3}</Typography>
+        {/* <Link></Link> */}
         <CenterButton btn={btn}/>
-        <CenterButton btn={btn}/>
+        {/* <CenterButton btn={btn}/> */}
       </Box>
+      
     </>
   );
 };

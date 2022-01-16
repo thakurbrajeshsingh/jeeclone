@@ -4,7 +4,7 @@ import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 const useStyle = makeStyles({
   container: {
     background: "#2E5274",
-    marginTop: "-7px",
+    // marginTop: "60vh",
   },
   footimg: {
     margin: "0px 60px 0px 60px",

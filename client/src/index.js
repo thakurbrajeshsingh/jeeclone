@@ -13,8 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     
     <LocalizationProvider dateAdapter={AdapterDateFns}>
-      {/* <App /> */}
-      <Register />
+      <App />
+      {/* <Register /> */}
     </LocalizationProvider>
     
   </React.StrictMode>,
