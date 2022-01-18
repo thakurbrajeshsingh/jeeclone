@@ -1,19 +1,6 @@
 import * as React from "react";
-// import Button from "@mui/material/Button";
-// import ButtonGroup from "@mui/material/ButtonGroup";
 
-import {
-  Typography,
-  Checkbox,
-  makeStyles,
-  ButtonGroup,
-  Select,
-  MenuItem,
-  Button,
-  Box,
-  InputLabel,
-  TextField,
-} from "@material-ui/core";
+import { makeStyles, Button } from "@material-ui/core";
 
 const useStyle = makeStyles({
   headerButton: {
@@ -25,15 +12,17 @@ const HeaderButton = () => {
   const classes = useStyle();
   return (
     <>
-      <div style={{ display: "flex",marginLeft:"15%",marginTop:"20vh" }}>
+      <div style={{ display: "flex", marginLeft: "15%", marginTop: "20vh" }}>
         <Button
           className={classes.headerButton}
-          style={{ background: "#0066FF" ,
-          color:"#ffffff",
-          width:"32%",
-          fontSize:"15px",
-          padding:"1%",
-          fontWeight:500}}
+          style={{
+            background: "#0066FF",
+            color: "#ffffff",
+            width: "32%",
+            fontSize: "15px",
+            padding: "1%",
+            fontWeight: 500,
+          }}
         >
           Registration
         </Button>
@@ -43,12 +32,12 @@ const HeaderButton = () => {
           style={{
             background: "#CCCCCC",
             marginLeft: "0.2%",
-            width:"31%",
+            width: "31%",
             marginRight: "0.2%",
-            color:"#ffffff",
-            padding:"1%",
-            fontSize:"15px",
-            fontWeight:500
+            color: "#ffffff",
+            padding: "1%",
+            fontSize: "15px",
+            fontWeight: 500,
           }}
         >
           Application Form
@@ -56,14 +45,15 @@ const HeaderButton = () => {
         <Button
           disabled
           className={classes.headerButton}
-          style={{ background: "#CCCCCC",
-          color:"#ffffff",
-          fontSize:"15px",
-          width:"31%",
-          padding:"1%",
-          fontWeight:500 }}
+          style={{
+            background: "#CCCCCC",
+            color: "#ffffff",
+            fontSize: "15px",
+            width: "31%",
+            padding: "1%",
+            fontWeight: 500,
+          }}
         >
-
           Document Upload
         </Button>
       </div>

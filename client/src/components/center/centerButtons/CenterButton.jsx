@@ -36,9 +36,11 @@ const CenterButton = () => {
             JEE(Main) New Registration
           </Button>
         </Link>
+        <Link to='/login'>
         <Button className={classes.btn1} variant="contained" disableElevation>
           JEE(Main) Old User Login
         </Button>
+        </Link>
       </Box>
     </>
   );

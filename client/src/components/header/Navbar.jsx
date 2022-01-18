@@ -12,7 +12,7 @@ import Header from "./Header";
 const useStyle = makeStyles({
   navbar: {
     marginTop: "6%",
-    width: "100vw",
+    width: "100%",
     height: "8%",
     background: "#002C56",
   },
@@ -22,6 +22,7 @@ const useStyle = makeStyles({
     borderColor: "white",
     display: "flex",
     justifyContent: "center",
+    textDecoration:"none"
   },
 });
 
@@ -39,10 +40,12 @@ const Navbar = () => {
   return (
     <>
       <AppBar className={classes.navbar}>
+    
         <Toolbar>
-          <Header />
+        <Header />
           <Box className={classes.navButton}>
-          <Link to='/'><Button className={classes.navButton}>Home</Button></Link>
+          
+          <Link to='/'><Button className={classes.navButton} style={{marginTop:"13%"}}>Home</Button></Link>
             <Box borderRight={1} {...defaultProps} />
             <Button className={classes.navButton}>Contact Us</Button>
             <Box {...defaultProps} borderLeft={0} />

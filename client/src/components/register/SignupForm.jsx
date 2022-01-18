@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { authenticateNewRegister } from "../../service/api";
 
 // component
 import HeaderButton from "./HeaderButton";
-
+import Login from "./Login";
 // date picker
 import DatePicker from "react-date-picker";
 
 import {
   Typography,
-  Checkbox,
   makeStyles,
   Select,
   MenuItem,
-  Box,
   InputLabel,
-  TextField,
 } from "@material-ui/core";
 import CaptchaTest from "./CaptchaTest";
 import Address from "./Address";
@@ -51,14 +49,14 @@ const useStyle = makeStyles({
     height: "30px",
     width: "97%",
   },
-  inputDiv:{
-    padding:"5%"
+  inputDiv: {
+    padding: "5%",
   },
   labelContainer: {
     display: "flex",
   },
-  dob:{
-    width:"50%"
+  dob: {
+    width: "50%",
   },
   inputTwo: {
     width: "50%",
@@ -69,23 +67,39 @@ const useStyle = makeStyles({
 });
 
 const SignupForm = () => {
+  // ----------------New Candidates Signup----------------------
+  const registerUser = async () => {
+    let response = await authenticateNewRegister(formValues);
+    if (!response) return;
+  };
+
+  // -------------------------------------------------------------
+
   // --------------------use state---------------------
   const [age, setAge] = useState("");
   const [identity, setIdentity] = useState("");
   const [value, onChange] = useState(new Date());
 
   // ---------------------- form validation---------------
-  const initialValues = { name: "", father: "", mother: "" };
+  const initialValues = {
+    name: "",
+    father: "",
+    mother: "",
+    identity: "",
+    email: "",
+    phone: "",
+  };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-  // console.log("form value is ",formValues.name)
+  // console.log("form value is ",formValues.identity)
   // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // console.log(e.target.value);
+    // console.log(e.values.identity);
     setFormValues({ ...formValues, [name]: value });
+    console.log(formValues)
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -145,33 +159,36 @@ const SignupForm = () => {
             {/* name field */}
             <div className={classes.outerBorder}>
               <div className={classes.inputDiv}>
-                <InputLabel 
-                className={classes.inputLabel}
-                style={{marginTop:"-3%",marginLeft:"-5%"}}
-                >Name</InputLabel>
+                <InputLabel
+                  className={classes.inputLabel}
+                  style={{ marginTop: "-3%", marginLeft: "-5%" }}
+                >
+                  Name
+                </InputLabel>
                 <input
                   name="name"
                   variant="outlined"
                   className={classes.input}
                   value={formValues.name}
                   onChange={handleChange}
-                  style={{marginLeft:"-5%",width:"107%"}}
+                  style={{ marginLeft: "-5%", width: "107%" }}
                   focused
                 />
               </div>
-              <p style={{ color: "red",marginTop:"-4%",marginLeft:"1%"}}>
+              <p style={{ color: "red", marginTop: "-4%", marginLeft: "1%" }}>
                 {formErrors.name}
               </p>
               {/* Parents Name */}
-              <div
-                className={classes.labelContainer}
-              >
-                <InputLabel className={classes.inputLabel}  style={{marginTop:"-1%"}}>
+              <div className={classes.labelContainer}>
+                <InputLabel
+                  className={classes.inputLabel}
+                  style={{ marginTop: "-1%" }}
+                >
                   Father's Name
                 </InputLabel>
                 <InputLabel
                   className={classes.inputLabel}
-                  style={{ marginLeft: "37%",marginTop:"-1%" }}
+                  style={{ marginLeft: "37%", marginTop: "-1%" }}
                 >
                   Mother's Name
                 </InputLabel>
@@ -183,7 +200,7 @@ const SignupForm = () => {
                   className={classes.inputTwo}
                   value={formValues.father}
                   onChange={handleChange}
-                  style={{width:"50%"}}
+                  style={{ width: "50%" }}
                 />
 
                 <input
@@ -192,7 +209,7 @@ const SignupForm = () => {
                   className={classes.inputTwo}
                   value={formValues.mother}
                   onChange={handleChange}
-                  style={{width:"50%"}}
+                  style={{ width: "50%" }}
                 />
               </div>
               <div style={{ display: "flex", marginBottom: "-2%" }}>
@@ -205,7 +222,7 @@ const SignupForm = () => {
                 >
                   {formErrors.father}
                 </p>
-                <p style={{ color: "red", marginTop: "1%",marginLeft:"1%" }}>
+                <p style={{ color: "red", marginTop: "1%", marginLeft: "1%" }}>
                   {formErrors.mother}
                 </p>
               </div>
@@ -229,7 +246,8 @@ const SignupForm = () => {
                   value={value}
                   className={classes.dob}
                   style={{
-                    width:"100%",marginRight:"2%"
+                    width: "100%",
+                    marginRight: "2%",
                   }}
                 />
 
@@ -241,7 +259,12 @@ const SignupForm = () => {
                     value={age}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "100%",marginTop:"-2%", height: "38px",marginLeft:"2%" }}
+                    style={{
+                      width: "100%",
+                      marginTop: "-2%",
+                      height: "38px",
+                      marginLeft: "2%",
+                    }}
                   >
                     <MenuItem value={"male"}>Male</MenuItem>
                     <MenuItem value={"female"}>Female</MenuItem>
@@ -252,7 +275,10 @@ const SignupForm = () => {
               {/* -----------identification------------- */}
 
               {/* Identity  section */}
-              <div className={classes.labelContainer} style={{marginTop:"2%"}}>
+              <div
+                className={classes.labelContainer}
+                style={{ marginTop: "2%" }}
+              >
                 <InputLabel
                   className={classes.inputLabel}
                   style={{ marginLeft: "1%" }}
@@ -276,14 +302,21 @@ const SignupForm = () => {
                     value={identity}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "105%", height: "40px",marginTop:"-2%" }}
+                    style={{ width: "105%", height: "40px", marginTop: "-2%" }}
                   >
                     <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                     <MenuItem value={"pan"}>PAN</MenuItem>
                     <MenuItem value={"other"}>Other</MenuItem>
                   </Select>
                 </div>
-                <input variant="outlined" className={classes.inputTwo} style={{width:"50%",marginLeft:"2%",height:"20%"}}/>
+                <input
+                  variant="outlined"
+                  name="identity"
+                  value={formValues.identity}
+                  onChange={handleChange}
+                  className={classes.inputTwo}
+                  style={{ width: "50%", marginLeft: "2%", height: "20%" }}
+                />
               </div>
             </div>
             <Address />
@@ -302,6 +335,7 @@ const SignupForm = () => {
                 width: "200px",
                 height: "50px",
               }}
+              onClick={() => registerUser()}
             >
               Submit
             </button>

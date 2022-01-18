@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-
-import { makeStyles, Box } from "@material-ui/core";
+import React from "react";
 
 // Component
 import Footer from "../footer/Main";
@@ -9,16 +7,14 @@ import Navbar from "../header/Navbar";
 import SignupForm from "./SignupForm";
 
 
-const useStyle = makeStyles({});
 
 const Main = () => {
-  const classes = useStyle();
+
   return (
     <>
       <Header />
       <Navbar />
       <SignupForm />
-      
       <Footer />
     </>
   );

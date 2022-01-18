@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Typography,
-  Checkbox,
   makeStyles,
   Select,
   MenuItem,
-  Box,
   InputLabel,
-  TextField,
 } from "@material-ui/core";
 
 const useStyle = makeStyles({

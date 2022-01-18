@@ -5,7 +5,7 @@ import { AppBar, Toolbar, makeStyles, Typography } from "@material-ui/core";
 const useStyle = makeStyles({
   header: {
     background: "#FFFFFF",
-    height: "5%",
+    height: "auto",
     justifyContent: "space-between",
     alignItems: "center",
   },
@@ -13,7 +13,7 @@ const useStyle = makeStyles({
     textAlign: "left",
   },
   logoNIC: {
-    marginTop: 10,
+    marginTop: "1%",
     background:"red"
   },
   headerText: {
