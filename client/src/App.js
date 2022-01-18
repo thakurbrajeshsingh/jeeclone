@@ -1,8 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 
-// Recat router
+// React router
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+
+import ContextProvider from './components/context/ContextProvider';
+
+
 
 // components 
 import Navbar from './components/header/Navbar';
@@ -20,6 +25,7 @@ const useStyle = makeStyles({
 function App() {
   const classes = useStyle();
   return (
+    <ContextProvider>
     <BrowserRouter>
       <Navbar />
     <Switch>
@@ -30,6 +36,7 @@ function App() {
     </Switch>
       {/* <FooterMain /> */}
     </BrowserRouter>
+    </ContextProvider>
 
   );
 }

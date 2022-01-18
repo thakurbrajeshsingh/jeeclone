@@ -67,31 +67,31 @@ const useStyle = makeStyles({
 });
 
 const SignupForm = () => {
-  // ----------------New Candidates Signup----------------------
-  const registerUser = async () => {
-    let response = await authenticateNewRegister(formValues);
-    if (!response) return;
-  };
-
-  // -------------------------------------------------------------
-
-  // --------------------use state---------------------
-  const [age, setAge] = useState("");
-  const [identity, setIdentity] = useState("");
-  const [value, onChange] = useState(new Date());
-
   // ---------------------- form validation---------------
   const initialValues = {
-    name: "",
+    candidate: "",
     father: "",
     mother: "",
     identity: "",
     email: "",
     phone: "",
   };
+
+  // ----------------New Candidates Signup----------------------
+
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+
+  const registerUser = async () => {
+    let response = await authenticateNewRegister(formValues);
+    if (!response) return;
+  };
+
+  // --------------------use state---------------------
+  const [age, setAge] = useState("");
+  const [identity, setIdentity] = useState("");
+  const [value, onChange] = useState(new Date());
 
   // console.log("form value is ",formValues.identity)
   // stored the user input value to formValues
@@ -99,12 +99,16 @@ const SignupForm = () => {
     const { name, value } = e.target;
     // console.log(e.values.identity);
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues)
+    console.log(formValues.candidate);
+    console.log(formValues.father);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+setFormValues (initialValues);
+
   };
   useEffect(() => {
     console.log(formErrors);
@@ -116,12 +120,12 @@ const SignupForm = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const nameRegex = /^[A-Za-z ]+$/;
 
-    if (!values.name) {
-      errors.name = "Name is Required";
-    } else if (!nameRegex.test(values.name)) {
-      errors.name = "Please Enter Alphabets";
-    } else if (!values.name.length < 3) {
-      errors.name = "Name must be more than 3 characters";
+    if (!values.candidate) {
+      errors.candidate = "Name is Required";
+    } else if (!nameRegex.test(values.candidate)) {
+      errors.candidate = "Please Enter Alphabets";
+    } else if (!values.candidate.length < 3) {
+      errors.candidate = "Name should be more then 3 characters";
     }
     // ----------------------------------------------------
     if (!values.father) {
@@ -166,17 +170,17 @@ const SignupForm = () => {
                   Name
                 </InputLabel>
                 <input
-                  name="name"
+                  name="candidate"
                   variant="outlined"
                   className={classes.input}
-                  value={formValues.name}
-                  onChange={handleChange}
+                  value={formValues.candidate}
+                  onChange={(e) => handleChange(e)}
                   style={{ marginLeft: "-5%", width: "107%" }}
                   focused
                 />
               </div>
               <p style={{ color: "red", marginTop: "-4%", marginLeft: "1%" }}>
-                {formErrors.name}
+                {formErrors.candidate}
               </p>
               {/* Parents Name */}
               <div className={classes.labelContainer}>
@@ -199,7 +203,7 @@ const SignupForm = () => {
                   variant="outlined"
                   className={classes.inputTwo}
                   value={formValues.father}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                   style={{ width: "50%" }}
                 />
 
@@ -208,7 +212,7 @@ const SignupForm = () => {
                   variant="outlined"
                   className={classes.inputTwo}
                   value={formValues.mother}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                   style={{ width: "50%" }}
                 />
               </div>
@@ -313,7 +317,7 @@ const SignupForm = () => {
                   variant="outlined"
                   name="identity"
                   value={formValues.identity}
-                  onChange={handleChange}
+                  onChange={(e) => handleChange(e)}
                   className={classes.inputTwo}
                   style={{ width: "50%", marginLeft: "2%", height: "20%" }}
                 />
@@ -325,6 +329,7 @@ const SignupForm = () => {
             <Password />
             <CaptchaTest />
             <button
+              onClick={() => registerUser()}
               style={{
                 background: "#ff8000",
                 marginLeft: "35%",
@@ -335,7 +340,6 @@ const SignupForm = () => {
                 width: "200px",
                 height: "50px",
               }}
-              onClick={() => registerUser()}
             >
               Submit
             </button>
