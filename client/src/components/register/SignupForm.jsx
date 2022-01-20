@@ -108,8 +108,8 @@ const SignupForm = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     setFormValues(initialValues);
-    // history.push('/login');
-    window.location.href ='/login';
+    registerUser();
+    // window.location.href ='/login';
   };
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit);
@@ -139,6 +139,15 @@ const SignupForm = () => {
     } else if (!nameRegex.test(values.mother)) {
       errors.mother = "Please Enter Alphabets";
     }
+    if(!values.identity){
+      errors.identity = "Identity is Required";
+    }
+  else if(values.identity.length < 7 || values.identity.length >15){
+  errors.identity = "Enter Valid ID Number";
+  }
+
+
+
     return errors;
   };
 
@@ -332,6 +341,9 @@ const SignupForm = () => {
                   style={{ width: "50%", marginLeft: "2%", height: "20%" }}
                 />
               </div>
+              <p style={{ color: "red", marginTop: "1%", marginLeft: "51%" }}>
+                {formErrors.identity}
+              </p>
             </div>
             <Address />
 
@@ -339,7 +351,7 @@ const SignupForm = () => {
             <Password />
             <CaptchaTest />
             <button
-              onClick={() => registerUser()}
+              onClick={() => handleSubmit()}
               style={{
                 background: "#ff8000",
                 marginLeft: "35%",
