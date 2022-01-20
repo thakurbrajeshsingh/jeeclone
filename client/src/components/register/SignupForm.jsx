@@ -3,12 +3,13 @@ import { authenticateNewRegister } from "../../service/api";
 
 // component
 import HeaderButton from "./HeaderButton";
-import Login from "./Login";
 // date picker
+import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-date-picker";
 
 import {
   Typography,
+  TextField,
   makeStyles,
   Select,
   MenuItem,
@@ -72,6 +73,9 @@ const SignupForm = () => {
     candidate: "",
     father: "",
     mother: "",
+    dob:"",
+    gender:"",
+    idType:"",
     identity: "",
     email: "",
     phone: "",
@@ -89,29 +93,25 @@ const SignupForm = () => {
   };
 
   // --------------------use state---------------------
-  const [age, setAge] = useState("");
-  const [identity, setIdentity] = useState("");
-  const [value, onChange] = useState(new Date());
 
-  // console.log("form value is ",formValues.identity)
+  console.log("form value is ",formValues.idType)
   // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
     // console.log(e.values.identity);
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues.candidate);
-    console.log(formValues.father);
+    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-setFormValues (initialValues);
-
+    setFormValues(initialValues);
+    // history.push('/login');
+    window.location.href ='/login';
   };
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit);
   }, [formErrors]);
 
@@ -124,7 +124,7 @@ setFormValues (initialValues);
       errors.candidate = "Name is Required";
     } else if (!nameRegex.test(values.candidate)) {
       errors.candidate = "Please Enter Alphabets";
-    } else if (!values.candidate.length < 3) {
+    } else if (values.candidate.length < 3) {
       errors.candidate = "Name should be more then 3 characters";
     }
     // ----------------------------------------------------
@@ -245,9 +245,15 @@ setFormValues (initialValues);
               </div>
               {/* Input Fields */}
               <div style={{ display: "flex" }}>
+              
+               
                 <DatePicker
-                  onChange={onChange}
-                  value={value}
+                  name="dob"
+                  label="Basic example"
+                  value={formValues.dob}
+                  selected={formValues.dob}
+                  onChange={(e)=>handleChange(e)}
+                  // renderInput={(params) => <TextField {...params} />}
                   className={classes.dob}
                   style={{
                     width: "100%",
@@ -260,7 +266,9 @@ setFormValues (initialValues);
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={age}
+                    name="gender"
+                    value={formValues.gender}
+                    onChange={(e)=>handleChange(e)}
                     label="Gender"
                     variant="outlined"
                     style={{
@@ -303,7 +311,9 @@ setFormValues (initialValues);
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={identity}
+                    name="idType"
+                    value={formValues.idType}
+                    onChange={(e)=>handleChange(e)}
                     label="Gender"
                     variant="outlined"
                     style={{ width: "105%", height: "40px", marginTop: "-2%" }}

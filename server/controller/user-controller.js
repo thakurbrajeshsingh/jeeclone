@@ -14,5 +14,5 @@ export const userRegister=async (request,response)=>{
     } catch (error) {
         console.log("Error",error.message);
     }
-    return "hello";
+    return;
 }
