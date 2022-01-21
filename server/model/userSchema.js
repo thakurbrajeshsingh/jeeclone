@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         // required: true,
         trim: true,
-        // unique: true,
+        unique: true,
         index: true,
         lowercase: true,
     },
@@ -92,6 +92,7 @@ const userSchema = new mongoose.Schema({
     },
     Cemail: {
         type: String,
+        trim: true,
 
     },
     Cphone: {

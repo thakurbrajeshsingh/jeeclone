@@ -129,7 +129,7 @@ const SignupForm = () => {
       } else {
         setIsError("");
       }
-    }, 2000);
+    }, 1000);
   };
 
   // ------------------------------------------------
@@ -625,7 +625,7 @@ const SignupForm = () => {
                 />
                 <Select
                   id="demo-simple-select"
-                  name="Ccountry"
+                  name="Pcountry"
                   value={checked ? formValues.Ccountry : formValues.Pcountry}
                   onChange={(e) => handleChange(e)}
                   variant="outlined"
