@@ -1,63 +1,65 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+const addressSchema = new mongoose.Schema({
     
-    candidate: {
+    address: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    father: {
+    locality: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    mother: {
+    area: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    dob: {
+    country: {
         type: String,
         // required: true,
     },
-    gender: {
+    state: {
         type: String,
         // required: true,
     },
-    idType:{
+    district:{
         type: String,
         // required: true,
     },
-    identity: {
+    pin : {
         type: String,
         // required: true,
         trim: true,
-        // unique: true,
         index: true,
         lowercase: true,
     },
-    email: {
+    mobile : {
         type: String,
         // required:true,
         trim: true,
         // unique: true,
         lowercase: true,
     },
-    phone: {
+    email : {
         type: String,
 
     },
+    phone :{
+        type: String,
+    }
 
 })
 
 
-const user = mongoose.model('newcandidate', userSchema);
+const address = mongoose.model('newAddress', addressSchema);
 
-export default user; 
+export default address; 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { authenticateNewRegister } from "../../service/api";
-
+import ModernDatepicker from "react-modern-datepicker";
 // component
 import HeaderButton from "./HeaderButton";
 // date picker
@@ -73,9 +73,9 @@ const SignupForm = () => {
     candidate: "",
     father: "",
     mother: "",
-    dob:"",
-    gender:"",
-    idType:"",
+    dob: "",
+    gender: "",
+    idType: "",
     identity: "",
     email: "",
     phone: "",
@@ -93,22 +93,19 @@ const SignupForm = () => {
   };
 
   // --------------------use state---------------------
-
-  console.log("form value is ",formValues.idType)
   // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
     // console.log(e.values.identity);
     setFormValues({ ...formValues, [name]: value });
-    
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    setFormValues(initialValues);
     registerUser();
+    setFormValues(initialValues);
     // window.location.href ='/login';
   };
   useEffect(() => {
@@ -139,14 +136,11 @@ const SignupForm = () => {
     } else if (!nameRegex.test(values.mother)) {
       errors.mother = "Please Enter Alphabets";
     }
-    if(!values.identity){
+    if (!values.identity) {
       errors.identity = "Identity is Required";
+    } else if (values.identity.length < 7 || values.identity.length > 15) {
+      errors.identity = "Enter Valid ID Number";
     }
-  else if(values.identity.length < 7 || values.identity.length >15){
-  errors.identity = "Enter Valid ID Number";
-  }
-
-
 
     return errors;
   };
@@ -254,14 +248,12 @@ const SignupForm = () => {
               </div>
               {/* Input Fields */}
               <div style={{ display: "flex" }}>
-              
-               
                 <DatePicker
                   name="dob"
                   label="Basic example"
                   value={formValues.dob}
                   selected={formValues.dob}
-                  onChange={(e)=>handleChange(e)}
+                  onChange={(e) => handleChange(e)}
                   // renderInput={(params) => <TextField {...params} />}
                   className={classes.dob}
                   style={{
@@ -269,7 +261,6 @@ const SignupForm = () => {
                     marginRight: "2%",
                   }}
                 />
-
                 {/* Gender selector */}
                 <div className={classes.inputTwo}>
                   <Select
@@ -277,7 +268,7 @@ const SignupForm = () => {
                     id="demo-simple-select"
                     name="gender"
                     value={formValues.gender}
-                    onChange={(e)=>handleChange(e)}
+                    onChange={(e) => handleChange(e)}
                     label="Gender"
                     variant="outlined"
                     style={{
@@ -322,7 +313,7 @@ const SignupForm = () => {
                     id="demo-simple-select"
                     name="idType"
                     value={formValues.idType}
-                    onChange={(e)=>handleChange(e)}
+                    onChange={(e) => handleChange(e)}
                     label="Gender"
                     variant="outlined"
                     style={{ width: "105%", height: "40px", marginTop: "-2%" }}

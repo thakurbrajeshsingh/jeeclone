@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-
+import { authenticateNewRegister } from "../../service/api";
 import {
   Typography,
   makeStyles,
@@ -83,6 +83,14 @@ const Address = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formValuesP, setFormValuesP] = useState(initialValuesP);
 
+// --------------------db connect---------------------------
+const userAddress = async () => {
+  let response = await authenticateNewRegister(formValues);
+  if (!response) return;
+  setFormValues(initialValues);
+};
+
+
   // checkbox button
   const [checked, setChecked] = useState(false);
 
@@ -91,6 +99,7 @@ const Address = () => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
+ 
 
   const fillPermanent = (e) => {
     if (checked === false) {
@@ -111,11 +120,25 @@ const Address = () => {
     setValue(value);
   };
 
+
+
+const handleSubmit=(e)=>{
+  e.preventDefault();
+  userAddress();
+  setFormValues(initialValues);
+}
+
+
+
+
+
+
+
   const classes = useStyle();
   return (
     <>
       {/*  address label */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <div className={classes.form}>
             <div style={{ marginTop: "5%" }}>
