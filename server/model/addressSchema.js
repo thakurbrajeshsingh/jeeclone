@@ -1,59 +1,113 @@
 import mongoose from 'mongoose';
 
 const addressSchema = new mongoose.Schema({
-    
-    address: {
+
+    Caddress: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    locality: {
+    Clocality: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    area: {
+    Ccity: {
         type: String,
         // required: true,
         trim: true,
         min: 3,
         max: 20
     },
-    country: {
+    Ccountry: {
         type: String,
         // required: true,
     },
-    state: {
+    Cstate: {
         type: String,
         // required: true,
     },
-    district:{
+    Cdistrict: {
         type: String,
         // required: true,
     },
-    pin : {
+    Cpin: {
         type: String,
         // required: true,
         trim: true,
         index: true,
         lowercase: true,
     },
-    mobile : {
+    Cmobile: {
         type: String,
         // required:true,
         trim: true,
         // unique: true,
         lowercase: true,
     },
-    email : {
+    Cemail: {
         type: String,
 
     },
-    phone :{
+    Cphone: {
+        type: String,
+    },
+    Paddress: {
+        type: String,
+        // required: true,
+        trim: true,
+        min: 3,
+        max: 20
+    },
+    Plocality: {
+        type: String,
+        // required: true,
+        trim: true,
+        min: 3,
+        max: 20
+    },
+    Pcity: {
+        type: String,
+        // required: true,
+        trim: true,
+        min: 3,
+        max: 20
+    },
+    Pcountry: {
+        type: String,
+        // required: true,
+    },
+    Pstate: {
+        type: String,
+        // required: true,
+    },
+    Pdistrict: {
+        type: String,
+        // required: true,
+    },
+    Ppin: {
+        type: String,
+        // required: true,
+        trim: true,
+        index: true,
+        lowercase: true,
+    },
+    Pmobile: {
+        type: String,
+        // required:true,
+        trim: true,
+        // unique: true,
+        lowercase: true,
+    },
+    Pemail: {
+        type: String,
+
+    },
+    Pphone: {
         type: String,
     }
 

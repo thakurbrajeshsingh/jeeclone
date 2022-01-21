@@ -17,15 +17,3 @@ export const userRegister = async (request, response) => {
     }
     return;
 }
-export const userAddress = async (request, response) => {
-
-    try {
-        const address = request.body;
-        const newAddress = Address(address);
-        await newAddress.save();
-        response.status(200).json('Candiate Registered successfully')
-    } catch (error) {
-        console.log("Error", error.message);
-    }
-    return;
-}

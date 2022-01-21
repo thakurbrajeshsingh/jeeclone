@@ -1,4 +1,6 @@
 import React from "react";
+import "./index.css";
+
 import { makeStyles } from "@material-ui/core";
 
 
@@ -14,6 +16,7 @@ import ContextProvider from './components/context/ContextProvider';
 import Navbar from './components/header/Navbar';
 import FooterMain from './components/footer/Main';
 import Register from "./components/register/Register";
+
 import LandingPage from "./components/home/LandingPage";
 import Login from "./components/register/Login";
 import Success from './components/register/Success';
@@ -34,6 +37,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={LandingPage} />
+          {/* <Route path='/register' component={Register} /> */}
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
           <LandingPage />
