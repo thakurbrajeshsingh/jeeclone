@@ -14,6 +14,7 @@ import ContextProvider from './components/context/ContextProvider';
 
 // components 
 import Navbar from './components/header/Navbar';
+
 import Register from "./components/register/Register";
 
 import LandingPage from "./components/home/LandingPage";
