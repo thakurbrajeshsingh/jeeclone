@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { authenticateNewRegister } from "../../service/api";
-import ModernDatepicker from "react-modern-datepicker";
+
 // component
 import HeaderButton from "./HeaderButton";
 // date picker
@@ -9,7 +9,6 @@ import DatePicker from "react-date-picker";
 
 import {
   Typography,
-  TextField,
   makeStyles,
   Select,
   MenuItem,
@@ -97,6 +96,7 @@ const SignupForm = () => {
     Pemail: "",
     Pphone: "",
     password: "",
+    securityAns: "",
   };
 
   // ----------------New Candidates Signup----------------------
@@ -131,9 +131,6 @@ const SignupForm = () => {
       }
     }, 1000);
   };
-
-  // ------------------------------------------------
-
   // --------------------use state---------------------
   // stored the user input value to formValues
   const handleChange = (e) => {
@@ -147,8 +144,8 @@ const SignupForm = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     registerUser();
+    // alert("Form Submitted Successfully")
     setFormValues(initialValues);
-    // window.location.href ='/login';
   };
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit);
@@ -156,7 +153,6 @@ const SignupForm = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const nameRegex = /^[A-Za-z ]+$/;
 
     if (!values.candidate) {
@@ -435,7 +431,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ width: "49%", marginRight: "2%" }}
+                  style={{ width: "46%", marginRight: "2%" }}
                 />
 
                 <Select
@@ -446,7 +442,7 @@ const SignupForm = () => {
                   onChange={(e) => handleChange(e)}
                   variant="outlined"
                   style={{
-                    width: "50%",
+                    width: "48%",
                     height: "40px",
                   }}
                 >
@@ -481,7 +477,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ width: "50%" }}
+                  style={{ width: "49%" }}
                 />
               </div>
               {/* ----------------- present pin & mobile---------------------- */}
@@ -621,7 +617,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ width: "49%", marginRight: "2%" }}
+                  style={{ width: "46%", marginRight: "2%" }}
                 />
                 <Select
                   id="demo-simple-select"
@@ -630,7 +626,7 @@ const SignupForm = () => {
                   onChange={(e) => handleChange(e)}
                   variant="outlined"
                   style={{
-                    width: "50%",
+                    width: "48%",
                     height: "40px",
                   }}
                 >
@@ -664,6 +660,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                   className={classes.inputTwo}
+                  style={{ width: "49%"}}
                 />
               </div>
               {/* -----------------pin & mobile---------------------- */}
@@ -686,7 +683,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ marginRight: "2%" }}
+                  style={{ marginRight: "2%",width:"50%" }}
                 />
                 <input
                   name="Pmobile"
@@ -695,6 +692,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
+                  style={{width:"48%" }}
                 />
               </div>
 
@@ -719,7 +717,7 @@ const SignupForm = () => {
                   type="email"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ marginRight: "2%" }}
+                  style={{ marginRight: "2%",width:"50%" }}
                 />
                 <input
                   name="Pphone"
@@ -729,6 +727,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
+                  style={{width:"48%" }}
                 />
               </div>
               {/* dashed border  end */}
@@ -800,7 +799,7 @@ const SignupForm = () => {
                     id="demo-simple-select"
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "99%", height: "35px" }}
+                    style={{ width: "%", height: "40px" ,width:"105%",marginTop:"-2%"}}
                   >
                     <MenuItem value={"pet"}>Pet Name</MenuItem>
                     <MenuItem value={"color"}>Favorite Color</MenuItem>
@@ -808,9 +807,12 @@ const SignupForm = () => {
                   </Select>
                 </div>
                 <input
+                  value={formValues.securityAns}
+                  onChange={(e) => handleChange(e)}
+                  name="securityAns"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ height: "30%", width: "48%", marginLeft: "1%" }}
+                  style={{ height: "20px",marginLeft: "1%" }}
                 />
               </div>
               {/* outer border */}

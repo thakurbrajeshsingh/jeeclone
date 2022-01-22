@@ -1,6 +1,6 @@
 
 import User from '../model/userSchema.js'
-import Address from '../model/addressSchema.js'
+
 export const userRegister = async (request, response) => {
 
     try {
@@ -11,7 +11,10 @@ export const userRegister = async (request, response) => {
         const user = request.body;
         const newUser = User(user);
         await newUser.save();
+        response.redirect('/login');
         response.status(200).json('Candiate Registered successfully')
+        
+       
     } catch (error) {
         console.log("Error", error.message);
     }

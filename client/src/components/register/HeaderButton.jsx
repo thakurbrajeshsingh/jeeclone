@@ -12,7 +12,7 @@ const HeaderButton = () => {
   const classes = useStyle();
   return (
     <>
-      <div style={{ display: "flex", marginLeft: "15%", marginTop: "20vh" }}>
+      <div style={{ display: "flex", marginLeft: "15%", marginTop: "8%" }}>
         <Button
           className={classes.headerButton}
           style={{

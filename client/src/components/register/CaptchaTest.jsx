@@ -2,18 +2,12 @@ import React, { Component } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
-  LoadCanvasTemplateNoReload,
   validateCaptcha,
 } from "react-simple-captcha";
 
 import {
   Typography,
-  makeStyles,
-  Select,
-  MenuItem,
-  Box,
   InputLabel,
-  TextField,
 } from "@material-ui/core";
 
 class CaptchaTest extends Component {
