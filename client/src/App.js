@@ -10,8 +10,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import ContextProvider from './components/context/ContextProvider';
 
-
-
 // components 
 import Navbar from './components/header/Navbar';
 

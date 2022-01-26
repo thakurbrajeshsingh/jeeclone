@@ -40,7 +40,7 @@ const HeaderButton = () => {
             fontWeight: 500,
           }}
         >
-          Application Form
+          Educational Details
         </Button>
         <Button
           disabled

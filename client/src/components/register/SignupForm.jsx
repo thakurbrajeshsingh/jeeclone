@@ -10,10 +10,12 @@ import DatePicker from "react-date-picker";
 import {
   Typography,
   makeStyles,
+  Container,
   Select,
   MenuItem,
   InputLabel,
 } from "@material-ui/core";
+
 import CaptchaTest from "./CaptchaTest";
 
 const useStyle = makeStyles({
@@ -115,8 +117,6 @@ const SignupForm = () => {
   // checkbox button
   const [checked, setChecked] = useState(false);
   // -------------------------------------------------
-
-  // ------------------------------------------------
   const [isError, setIsError] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -286,18 +286,15 @@ const SignupForm = () => {
               </div>
               {/* Input Fields */}
               <div style={{ display: "flex" }}>
-                <DatePicker
+                <input
+                  type="date"
                   name="dob"
-                  label="Basic example"
                   value={formValues.dob}
-                  selected={formValues.dob}
                   onChange={(e) => handleChange(e)}
-                  // renderInput={(params) => <TextField {...params} />}
                   className={classes.dob}
-                  style={{
-                    width: "100%",
-                    marginRight: "2%",
-                  }}
+                    style={{
+                      width: "50%",
+                     }}
                 />
                 {/* Gender selector */}
                 <div className={classes.inputTwo}>
@@ -354,7 +351,11 @@ const SignupForm = () => {
                     onChange={(e) => handleChange(e)}
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "105%", height: "40px", marginTop: "-2%" }}
+                    style={{
+                      width: "105%",
+                      height: "40px",
+                      marginTop: "-2%",
+                    }}
                   >
                     <MenuItem value={"aadhar"}>Aadhar</MenuItem>
                     <MenuItem value={"pan"}>PAN</MenuItem>
@@ -660,7 +661,7 @@ const SignupForm = () => {
                   onChange={handleChange}
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ width: "49%"}}
+                  style={{ width: "49%" }}
                 />
               </div>
               {/* -----------------pin & mobile---------------------- */}
@@ -683,7 +684,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ marginRight: "2%",width:"50%" }}
+                  style={{ marginRight: "2%", width: "50%" }}
                 />
                 <input
                   name="Pmobile"
@@ -692,7 +693,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{width:"48%" }}
+                  style={{ width: "48%" }}
                 />
               </div>
 
@@ -717,7 +718,7 @@ const SignupForm = () => {
                   type="email"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ marginRight: "2%",width:"50%" }}
+                  style={{ marginRight: "2%", width: "50%" }}
                 />
                 <input
                   name="Pphone"
@@ -727,7 +728,7 @@ const SignupForm = () => {
                   type="number"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{width:"48%" }}
+                  style={{ width: "48%" }}
                 />
               </div>
               {/* dashed border  end */}
@@ -799,7 +800,12 @@ const SignupForm = () => {
                     id="demo-simple-select"
                     label="Gender"
                     variant="outlined"
-                    style={{ width: "%", height: "40px" ,width:"105%",marginTop:"-2%"}}
+                    style={{
+                      width: "%",
+                      height: "40px",
+                      width: "105%",
+                      marginTop: "-2%",
+                    }}
                   >
                     <MenuItem value={"pet"}>Pet Name</MenuItem>
                     <MenuItem value={"color"}>Favorite Color</MenuItem>
@@ -812,7 +818,7 @@ const SignupForm = () => {
                   name="securityAns"
                   variant="outlined"
                   className={classes.inputTwo}
-                  style={{ height: "20px",marginLeft: "1%" }}
+                  style={{ height: "20px", marginLeft: "1%" }}
                 />
               </div>
               {/* outer border */}
