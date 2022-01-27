@@ -362,8 +362,9 @@ const EducationDetails = () => {
               Submit
             </Button>
         </Container>
+        <Footer/>
       </div>
-      <Footer/>
+     
     </>
   );
 };

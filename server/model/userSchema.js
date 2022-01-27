@@ -74,7 +74,7 @@ const userSchema = new mongoose.Schema({
     },
     Cdistrict: {
         type: String,
-        // required: true,
+        required: true,
     },
     Cpin: {
         type: String,
@@ -87,7 +87,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         // required:true,
         trim: true,
-        // unique: true,
+        unique: true,
         lowercase: true,
     },
     Cemail: {
@@ -142,7 +142,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         // required:true,
         trim: true,
-        // unique: true,
+        unique: true,
         lowercase: true,
     },
     Pemail: {
