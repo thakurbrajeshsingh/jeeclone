@@ -3,15 +3,9 @@ import React from "react";
 import { Box, makeStyles, Typography, Divider } from "@material-ui/core";
 
 
-// Recat router
-import { BrowserRouter,Switch,Route,Link } from 'react-router-dom';
-
-
-
-
 // Components
 import CenterButton from "./centerButtons/CenterButton";
-import Register from '../register/Register';
+
 
 
 

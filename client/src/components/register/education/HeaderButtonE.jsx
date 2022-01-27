@@ -4,10 +4,10 @@ import { makeStyles, Button } from "@material-ui/core";
 
 const useStyle = makeStyles({
   headerButton: {
-    width: "31.4%",
+    width: "50%",
     background: "#0066FF",
     color: "#ffffff",
-    width: "32%",
+    width: "50%",
     fontSize: "15px",
     padding: "1%",
     fontWeight: 500,
@@ -15,7 +15,7 @@ const useStyle = makeStyles({
   disbale: {
     background: "#CCCCCC",
     marginLeft: "0.2%",
-    width: "31%",
+    width: "50%",
     marginRight: "0.2%",
     color: "#ffffff",
     padding: "1%",
@@ -25,17 +25,19 @@ const useStyle = makeStyles({
   },
 });
 
-const HeaderButton = (props) => {
+const ButtonEducation = (props) => {
   const classes = useStyle();
   return (
     <>
-      <div style={{ display: "flex", marginLeft: "15%", marginTop: "8%" }}>
-        <Button className={classes.headerButton}>Registration</Button>
-        <Button className={classes.disbale} href="/education">Educational Details</Button>
+     
+      <div style={{ display: "flex",width:"106%",marginLeft:"-28px"}}>
+        <Button className={classes.disbale} href='/register'>Registration</Button>
+        <Button className={classes.headerButton} href="#">Educational Details</Button>
         <Button className={classes.disbale}>Document Upload</Button>
       </div>
+  
     </>
   );
 };
 
-export default HeaderButton;
+export default ButtonEducation;

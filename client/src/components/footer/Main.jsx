@@ -5,14 +5,11 @@ import { Button, makeStyles, AppBar, Toolbar, Box } from "@material-ui/core";
 import Up from "./Up";
 import Down from "./Down";
 
-const useStyle = makeStyles({  
-});
 
-const Main = () => {
-  const classes = useStyle();
+const Main = () => { 
   return (
     <>
-    <div className={classes.align}>
+    <div>
       <Up />
       <Down />
       </div>

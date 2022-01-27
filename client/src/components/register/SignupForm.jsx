@@ -3,14 +3,11 @@ import { authenticateNewRegister } from "../../service/api";
 
 // component
 import HeaderButton from "./HeaderButton";
-// date picker
-import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-date-picker";
-
+import Footer from '../footer/Main'
 import {
   Typography,
   makeStyles,
-  Container,
+  Button,
   Select,
   MenuItem,
   InputLabel,
@@ -132,11 +129,13 @@ const SignupForm = () => {
     }, 1000);
   };
   // --------------------use state---------------------
+
   // stored the user input value to formValues
   const handleChange = (e) => {
     const { name, value } = e.target;
     // console.log(e.values.identity);
     setFormValues({ ...formValues, [name]: value });
+    // setDisable(e.target.value === "");
   };
 
   const handleSubmit = (e) => {
@@ -144,7 +143,6 @@ const SignupForm = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     registerUser();
-    // alert("Form Submitted Successfully")
     setFormValues(initialValues);
   };
   useEffect(() => {
@@ -292,9 +290,9 @@ const SignupForm = () => {
                   value={formValues.dob}
                   onChange={(e) => handleChange(e)}
                   className={classes.dob}
-                    style={{
-                      width: "50%",
-                     }}
+                  style={{
+                    width: "50%",
+                  }}
                 />
                 {/* Gender selector */}
                 <div className={classes.inputTwo}>
@@ -829,24 +827,25 @@ const SignupForm = () => {
 
             {/* ------------------password end------------------ */}
             <CaptchaTest />
-            <button
+
+            <Button
+              variant="outlined"
+              href="/education"
               onClick={() => handleSubmit()}
               style={{
-                background: "#ff8000",
-                marginLeft: "35%",
-                marginTop: "20px",
-                marginBottom: "20px",
-                color: "#ffffff",
+                color: "#0D80D8",
+                margin: "20px 20px 20px 35%",
+                borderColor: "#97C1EA",
                 fontSize: "20px",
                 width: "200px",
-                height: "50px",
               }}
             >
-              Submit
-            </button>
+              Next
+            </Button>
           </div>
         </form>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -9,8 +9,9 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 
 ReactDOM.render(
-  <React.StrictMode>  
+  <React.StrictMode>
     <LocalizationProvider dateAdapter={AdapterDateFns}>
+
       <App />
     </LocalizationProvider>
   </React.StrictMode>,
