@@ -16,7 +16,7 @@ import Register from "./components/register/Register";
 import LandingPage from "./components/home/LandingPage";
 import Login from "./components/register/Login";
 import EductionDetails from './components/register/education/EducationDetails'
-
+import DocUpload from './components/register/education/DocUpload'
 
 const useStyle = makeStyles({
 
@@ -36,6 +36,7 @@ function App() {
           <Route path='/register' component={Register} />
           <Route path='/login' component={Login} />
           <Route path='/education' component={EductionDetails} />
+          <Route path='/upload' component={DocUpload} />
           <LandingPage />
         </Switch>
       </BrowserRouter>

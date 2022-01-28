@@ -43,12 +43,13 @@ const EducationDetails = () => {
   };
   // ----------------Education Details------------------------
   const [formValues, setFormValues] = useState(initialValues);
-  
+
   const userEdu = async () => {
     let response = await userEducation(formValues);
     if (!response) {
-      console.log("error cannot send data")
-      return};
+      console.log("error cannot send data");
+      return;
+    }
   };
 
   const handleChange = (e) => {
@@ -57,12 +58,18 @@ const EducationDetails = () => {
   };
 
   const handleSubmits = (e) => {
-    console.log("check 1")
-    console.log("check 2")
-    userEdu();
+    // userEdu();
     // window.location.href = "/education";
     // setFormValues(initialValues);
   };
+
+  // ------------------------upload-------------------------------
+  
+  const [newUser,setNewAuthor] =useState();
+  
+  const handlePhoto = (e) => {
+    setNewAuthor({...newUser, photo: e.target.files[0]});
+}
 
   const classes = useStyle();
   return (
@@ -73,7 +80,7 @@ const EducationDetails = () => {
 
           <h2 style={{ color: "#063970" }}> Education Qualification</h2>
           <div className={classes.formContainer}>
-          <form>
+            <form onSubmit={handleSubmits}>
               <table style={{ width: "100%" }}>
                 <tr style={{ textAlign: "center" }}>
                   <th colspan="1">
@@ -314,6 +321,8 @@ const EducationDetails = () => {
                     accept="image/*"
                     id="contained-button-file"
                     type="file"
+                    name="mat"
+                    onChange={handlePhoto}
                   />
                 </th>
               </tr>
@@ -352,6 +361,8 @@ const EducationDetails = () => {
                     accept="image/*"
                     id="contained-button-file"
                     type="file"
+                    name="inter"
+                    onChange={handlePhoto}
                   />
                 </th>
               </tr>
@@ -389,6 +400,8 @@ const EducationDetails = () => {
                     accept="image/*"
                     id="contained-button-file"
                     type="file"
+                    name="grad"
+                onChange={handlePhoto}
                   />
                 </th>
               </tr>
@@ -400,18 +413,6 @@ const EducationDetails = () => {
             </table>
           </div>
 
-          {/* <Button
-              onClick={() => handleSubmit()}
-              style={{
-                color: "#0D80D8",
-                margin: "20px 20px 20px 35%",
-                borderColor: "#97C1EA",
-                fontSize: "20px",
-                width: "200px",
-              }}
-            >
-              Submit
-            </Button> */}
           <button
             onClick={() => handleSubmits()}
             style={{
