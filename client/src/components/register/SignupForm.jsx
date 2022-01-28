@@ -143,7 +143,9 @@ const SignupForm = () => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
     registerUser();
+    window.location.href = "/education";
     setFormValues(initialValues);
+
   };
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit);
@@ -828,20 +830,21 @@ const SignupForm = () => {
             {/* ------------------password end------------------ */}
             <CaptchaTest />
 
-            <Button
-              variant="outlined"
-              href="/education"
+            <button
               onClick={() => handleSubmit()}
               style={{
-                color: "#0D80D8",
-                margin: "20px 20px 20px 35%",
-                borderColor: "#97C1EA",
+                background: "#ff8000",
+                marginLeft: "35%",
+                marginTop: "20px",
+                marginBottom: "20px",
+                color: "#ffffff",
                 fontSize: "20px",
                 width: "200px",
+                height: "50px",
               }}
             >
               Next
-            </Button>
+            </button>
           </div>
         </form>
       </div>

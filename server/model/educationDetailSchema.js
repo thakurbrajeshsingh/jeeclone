@@ -2,29 +2,24 @@ import mongoose from 'mongoose';
 
 const educationDetailsSchema = new mongoose.Schema({
 
-    matricboard: {
+    matBoard: {
+        type: String,
+    },
+    matYear: {
+        type: String,
+    },
+    matMark: {
         type: String,
 
     },
-    matricyear: {
+    interBoard: {
         type: String,
-
-    },
-    matricMarks: {
-        type: String,
-
-    },
-    interboard: {
-        type: String,
-
     },
     interYear: {
         type: String,
-
     },
-    interMarks: {
+    interMark: {
         type: String,
-
     },
     gradBoard: {
         type: String,
@@ -38,11 +33,11 @@ const educationDetailsSchema = new mongoose.Schema({
         type: String,
 
     },
-   
+
 
 })
 
 
-const educationDetail = mongoose.model('educationDetail', educationDetailsSchema);
+const educationDetail = mongoose.model('userEducation', educationDetailsSchema);
 
 export default educationDetail; 

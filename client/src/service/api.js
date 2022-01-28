@@ -10,10 +10,10 @@ export const authenticateNewRegister = (user) => {
         console.log("Error while Calling Sign Up Api")
     }
 }
-export const authenticatelogin = (user) =>{
+export const userEducation = (usereEdu) =>{
     try {
-        return axios.post(`${url}login`,user)
+        return axios.post(`${url}education`,usereEdu)
     } catch (error) {
-        console.log("Error while Calling Api")
+        console.log("Error with education details Api")
     }
 } 

@@ -2,16 +2,17 @@ import express from 'express';
 
 
 // controller
-import {userRegister,userLogin} from '../controller/user-controller.js'
+import {userRegister} from '../controller/user-controller.js'
+import {userEducation} from '../controller/userEdu-controller.js'
 
 
 const router = express.Router();
 
 
 router.post('/register',userRegister)
-router.post('/login', userLogin);
+router.post('/education', userEducation);
 
-// router.get('/login',)
+
 
 
 export default router;
